@@ -1,5 +1,6 @@
 :root{
-  --bgcolor: rgb(255, 180, 80);
+  --bgcolor: rgb(255, 250, 225);
+  --navbarcolor: rgb(255, 240, 160);
 }
 
 body {

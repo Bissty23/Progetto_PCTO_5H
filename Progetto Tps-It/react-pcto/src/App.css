@@ -2,12 +2,8 @@
   text-align: center;
 }
 
-.App #NAVBAR .navbar-brand {
-  color: #ce1717;
-  font-size: small;
-}
-
-.App .navbar{
-  border-radius: 15px;
-  background-color: rgb(255, 116, 65);
+.navbar{
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: var(--navbarcolor);
 }
