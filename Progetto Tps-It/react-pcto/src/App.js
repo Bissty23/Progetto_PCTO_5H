@@ -4,7 +4,6 @@ import Errore from './Pagine/Errore/Errore'
 import AccountVar from './Componenti/AccountVar'
 import Logo from './img/icona.png'
 import './App.css'
- 
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
  
 class App extends React.Component{
@@ -13,7 +12,7 @@ class App extends React.Component{
 
     this.state = {
       Accesso: false,
-      Uername: "",
+      Username: "",
       Password: "",
     }
   }
@@ -51,7 +50,7 @@ class App extends React.Component{
                 </form> */}
               </div>
             </div>  
-            <AccountVar account={this.state.Accesso}/>
+            <AccountVar datiAccount={ {Accesso: this.state.Accesso, Username: this.state.Username} }/>
           </nav>
           <br/>
 

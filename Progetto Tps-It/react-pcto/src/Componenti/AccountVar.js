@@ -5,9 +5,11 @@ class AccountVar extends React.Component {
 
     render() { 
 
-        if(this.props.account)
+        if(this.props.datiAccount.Accesso)
             return (  
-                <a>piede</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><Link class="nav-link active" aria-current="page" to="/">{this.props.datiAccount.Username}</Link></li>
+                </ul>
             );
         else
             return (  
@@ -18,7 +20,5 @@ class AccountVar extends React.Component {
             );
     }
 }
-
-//<Link className="nav-link active" aria-current="page" to="/">Active</Link>
  
 export default AccountVar;
