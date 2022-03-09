@@ -23,12 +23,28 @@ class Registra extends React.Component{
           </div>
         </div>
 
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <div class="col-sm mb-3">
+        <select class="form-select" aria-label="Default select example" placeholder='Plesso'>
+        <option value="" selected disabled>--Sede--</option>
+          <option value="1">Pascal</option>
+          <option value="2">Comandini</option>
         </select>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Classe</label>
+          <div class="col-sm-10">
+          <select class="form-select" aria-label="Default select example" placeholder='Plesso'>
+          <option value="" selected disabled>--Classe--</option>
+          </select>
+          </div>
+        </div>
+
+
+
+        
+
+
 
       </div>
     )
@@ -36,4 +52,11 @@ class Registra extends React.Component{
 }
  
 export default Registra
+
+
+
+
+
+
+
 
