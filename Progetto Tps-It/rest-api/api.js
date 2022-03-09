@@ -1,12 +1,14 @@
-var  Db = require('./dbcrud');
+var  Db = require('./dbcrud.js');
+var  express = require('express');
 var  bodyParser = require('body-parser');
-var  app = require('express');
-var  router = require('express').Router;
+var  cors = require('cors');
+var  app = express();
+var  router = express.Router();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended:  true }));
 app.use(bodyParser.json());
-app.use(require('cors'));
-app.use('/apiPCTO', router);
+app.use(cors());
+app.use('/api', router);
 
 router.use((request, response, next) => {
   console.log('Server in funzione...');
@@ -25,7 +27,15 @@ router.use((request, response, next) => {
 //   })
 // })  
 
-  
+//(ctrl + k) + (ctrl + c) per commentare la parte selezionata 
+//(ctrl + k) + (ctrl + u) per decommentare la parte selezionata 
+
+router.route('/Account/:username').get((request, response) => { 
+  Db.GetAccount(request.params.username).then((data) => { 
+    response.json(data[0]); 
+  }) 
+})
+
 var  port = process.env.PORT || 8090;
 app.listen(port);
 console.log('Le API sono in ascolto sulla porta ' + port);

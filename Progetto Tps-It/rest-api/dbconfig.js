@@ -1,11 +1,11 @@
 const config = {
-    user: "SA",
-    password: "burbero2020",
-    server:"127.0.0.1",
+    user: "sa",
+    password: "ciao1234",
+    server:"localhost",
     database: "PCTO",
     options: {
         trustedconnection: true,
-        trustserverCertificate: true,
+        trustServerCertificate: true,
         enableArithAbort: true,
         instancename:"MSSQLSERVER"
     },

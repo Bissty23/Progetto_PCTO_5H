@@ -21,8 +21,21 @@ const  sql = require('mssql');
 //   catch (error) { console.log(error); }
 // }
 
+//(ctrl + k) + (ctrl + c) per commentare la parte selezionata 
+//(ctrl + k) + (ctrl + u) per decommentare la parte selezionata 
+
+async  function  GetAccount(username) {
+  try {
+    let  pool = await  sql.connect(config);
+    let  account = await  pool.request().input('username', sql.NChar, username).query("SELECT * from Account where Username = @username");
+    return  account.recordsets;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = {
   //<metodo>: <metodo>
-  
+  GetAccount: GetAccount,
 }
