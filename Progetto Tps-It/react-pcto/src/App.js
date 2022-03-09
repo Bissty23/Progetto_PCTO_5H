@@ -8,16 +8,17 @@ import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Accedi from './Pagine/Accedi/Accedi'
  
 class App extends React.Component{
-  constructor(props) {
-    super(props);
-  }
 
-  state = {
-    Accesso: false,
-    Username: "",
-    Password: "",
-    Email: ""
-  }
+
+ state =  {
+  Accesso: localStorage.getItem('accesso'),
+  Username: localStorage.getItem('username'),
+  Password: localStorage.getItem('password'),
+  NumeroDiTelefono: localStorage.getItem('numeroditelefono'),
+  Ruolo: localStorage.getItem('ruolo'),
+  Email: localStorage.getItem('email'),
+  Sede: localStorage.getItem('Sede'),
+}
 
   // AggiornaSato = (event) => {
   //   event.preventDefault();
@@ -25,6 +26,8 @@ class App extends React.Component{
   // }
  
   render(){
+
+    console.log(this.state)
 
     return(
       <div className="App">
@@ -42,7 +45,7 @@ class App extends React.Component{
                 </Link>
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                      <a className="nav-link active" aria-current="page" href="#">Home</a>
+                      <button onClick={localStorage.clear()} className="nav-link active" aria-current="page" >Home</button>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#">Link</a>
