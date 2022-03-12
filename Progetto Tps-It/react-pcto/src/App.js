@@ -1,5 +1,6 @@
 import React from 'react'
 import Registra from './Pagine/Registra/Registra'
+import RegistraSec from './Pagine/Registra/RegistraSec'
 import Errore from './Pagine/Errore/Errore'
 import AccountVar from './Componenti/AccountVar'
 import Logo from './img/icona.png'
@@ -69,6 +70,7 @@ class App extends React.Component{
               <Route path="/"/>
               <Route path="/Accedi" element={<Accedi />} />
               <Route path="/Registrazione" element={<Registra />} />
+              <Route path="/RegistrazioneSec" element={<RegistraSec/>} />
               <Route path="*" element={<Errore />} />
             </Routes> 
           </BrowserRouter>

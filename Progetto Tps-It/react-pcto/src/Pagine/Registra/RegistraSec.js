@@ -1,15 +1,16 @@
 import React from 'react'
 import $ from 'jquery'
-import './Registra.css'
 import { Link } from 'react-router-dom';
+
+
+class RegistraSec extends React.Component{
  
-class Registra extends React.Component{
- 
-  render(){
-    
-    return(
-      <div className="container">
-        <div class="input-group mb-3">
+    render(){
+      
+      return(
+        
+        <div className="container mb-4">
+        <div class="input-group mb-4">
           <input type="text" class="form-control" placeholder="Username" id="inUserName"/>   
         </div>
 
@@ -41,36 +42,15 @@ class Registra extends React.Component{
         <div class="col-sm mt-5">
           <button onClick={() => this.validaPass($('#inPassword').val(), $('#inConfPassword').val())} type="submit" class="btn btn-dark mt-4 md-4">Registrati</button>
         </div>
-
-
-        <div  >
-          <Link  aria-current="page" id='linkReg' to="/RegistrazioneSec">Non sei uno studente?</Link>  
         </div>
-
-      
         
-
-      </div>
-       
+      )
       
-    )
-    
+    }
   }
+   
+  export default RegistraSec
   
-  validaPass = (password, ConfPassword) =>{
-      if(password != ConfPassword)
-      {
-        alert("Errore, le due password sono sbagliate")
-      }
-  }
-}
- 
-export default Registra
-
-
-
-
-
-
-
-
+  
+  
+  
