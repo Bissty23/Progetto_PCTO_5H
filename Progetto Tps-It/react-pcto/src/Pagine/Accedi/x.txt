@@ -1,0 +1,9 @@
+localStorage.setItem('accesso', true)
+localStorage.setItem('username', risposta.data[0].Username)
+localStorage.setItem('password', risposta.data[0].Password)
+localStorage.setItem('numeroditelefono', risposta.data[0].Username)
+localStorage.setItem('ruolo', risposta.data[0].Ruolo)
+localStorage.setItem('email', risposta.data[0].Email)
+localStorage.setItem('Sede', risposta.data[0].Sede)
+
+window.location.href = '/'; 
