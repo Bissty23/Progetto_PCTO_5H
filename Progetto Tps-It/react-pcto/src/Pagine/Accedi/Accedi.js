@@ -29,19 +29,31 @@ class Accedi extends React.Component {
   }
 
   GetAccount = (username, password) =>{ 
+    $('.alert').hide()
     $('#btnAccedi').prop('disabled', true);
 
     Axios.get("http://localhost:8090/api/Account/" + username).then(
       (risposta) =>{
 
-        if(CryptoJS.SHA3(password) === risposta.data[0].Password){
-          alert('brumotti gay')
+        if(CryptoJS.SHA3(password).toString() === risposta.data[0].Password.toString()){
+          localStorage.setItem('accesso', true)
+          localStorage.setItem('username', risposta.data[0].Username)
+          localStorage.setItem('password', risposta.data[0].Password)
+          localStorage.setItem('numeroditelefono', risposta.data[0].Username)
+          localStorage.setItem('ruolo', risposta.data[0].Ruolo)
+          localStorage.setItem('email', risposta.data[0].Email)
+          localStorage.setItem('Sede', risposta.data[0].Sede)
+
+          window.location.href = '/'; 
+          return
         }
         else {
-          this.Errore("la Password inserita non è corretta")
+          $('#errore').html("Errore: Password incorretta ")
           $('#InPassword').val('')
         }
 
+        $('.alert').show()
+        $('#btnAccedi').prop('disabled', false)
       },
       (errore) =>{ 
 
@@ -49,7 +61,7 @@ class Accedi extends React.Component {
           $('#errore').html("Errore: Connessione al DataBase non riuscita ")
         }
         else if (errore.toString().includes("Request failed with status code 404")){
-          $('#errore').html("Errore: Username o Email inserita non correttamente")
+          $('#errore').html("Errore: Username o Email inserita non correttamente ")
         }
 
         $('.alert').show()
