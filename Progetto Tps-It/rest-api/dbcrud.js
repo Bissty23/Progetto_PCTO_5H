@@ -31,7 +31,12 @@ async  function  GetAccount(username) {
     return  account.recordsets;
   }
   catch (error) {
-    console.log(error);
+    try {
+      let pool = await  sql.connect(config);
+      let account = await  pool.request().input('email', sql.NChar, username).query("SELECT * from Account where Email = @email");
+      return  account.recordsets;
+    }
+    catch (error) { console.log(error); }
   }
 }
 
