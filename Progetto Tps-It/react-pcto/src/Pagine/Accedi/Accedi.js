@@ -17,10 +17,10 @@ class Accedi extends React.Component {
         </div>    
 
         <div className="input-group mb-3">
-          <input type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
+          <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
         </div>
         <div className="input-group mb-3">
-          <input type="password" className="form-control" placeholder="password" id="InPassword"/>   
+          <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount($('#InUsername').val(), $('#InPassword').val())} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
         </div>
         
         <input onClick={() => this.GetAccount($('#InUsername').val(), $('#InPassword').val())} type="button" id="btnAccedi" className="btn btn-dark" value="Accedi"/>
@@ -32,41 +32,39 @@ class Accedi extends React.Component {
     $('.alert').hide()
     $('#btnAccedi').prop('disabled', true);
 
-    Axios.get("http://localhost:8090/api/Account/" + username).then(
-      (risposta) =>{
+    if(username != ''){
+      Axios.get("http://localhost:8090/api/Account/" + username).then(
+        (risposta) =>{
+          if(risposta.data[0] != undefined)
+            if(password != '')
+              if(CryptoJS.SHA3(password) == risposta.data[0].Password){
+                localStorage.setItem('accesso', true)
+                localStorage.setItem('username', risposta.data[0].Username)
+                localStorage.setItem('password', risposta.data[0].Password)
+                localStorage.setItem('numeroditelefono', risposta.data[0].NumeroDiTelefono)
+                localStorage.setItem('ruolo', risposta.data[0].Ruolo)
+                localStorage.setItem('email', risposta.data[0].Email)
+                localStorage.setItem('Sede', risposta.data[0].Sede)
 
-        if(CryptoJS.SHA3(password).toString() === risposta.data[0].Password.toString()){
-          localStorage.setItem('accesso', true)
-          localStorage.setItem('username', risposta.data[0].Username)
-          localStorage.setItem('password', risposta.data[0].Password)
-          localStorage.setItem('numeroditelefono', risposta.data[0].Username)
-          localStorage.setItem('ruolo', risposta.data[0].Ruolo)
-          localStorage.setItem('email', risposta.data[0].Email)
-          localStorage.setItem('Sede', risposta.data[0].Sede)
-
-          window.location.href = '/'; 
-          return
+                window.location.href = '/'; 
+              }
+              else this.Errore("Errore: Password errata")
+            else this.Errore("Errore: Inserire la Password")
+          else this.Errore("Errore: Username o Email inserite sono incorrette")
+        },
+        (errore) =>{ 
+          if(errore.toString().includes("Network Error")) this.Errore("Errore: Connessione al DataBase non riuscita")
+          else this.Errore(errore.toString())
         }
-        else {
-          $('#errore').html("Errore: Password incorretta ")
-          $('#InPassword').val('')
-        }
+      )
+    } else this.Errore("Errore: Inserire Username o Email")     
+  }
 
-        $('.alert').show()
-        $('#btnAccedi').prop('disabled', false)
-      },
-      (errore) =>{ 
-
-        if(errore.toString().includes("Network Error")) {
-          $('#errore').html("Errore: Connessione al DataBase non riuscita ")
-        }
-        else if (errore.toString().includes("Request failed with status code 404")){
-          $('#errore').html("Errore: Username o Email inserita non correttamente ")
-        }
-
-        $('.alert').show()
-        $('#btnAccedi').prop('disabled', false)
-      })
+  Errore = (errore) => {
+    $('#errore').html(errore + ' ')
+    $('#InPassword').val('')
+    $('.alert').show()
+    $('#btnAccedi').prop('disabled', false)
   }
 }
 

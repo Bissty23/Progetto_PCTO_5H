@@ -7,6 +7,7 @@ import Logo from './img/icona.png'
 import './App.css'
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Accedi from './Pagine/Accedi/Accedi'
+import Account from './Pagine/Account/Accout'
  
 class App extends React.Component{
 
@@ -46,7 +47,7 @@ class App extends React.Component{
                 </Link>
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                      <button onClick={localStorage.clear()} className="nav-link active" aria-current="page" >Home</button>
+                    <a className="nav-link" href="#">Link</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#">Link</a>
@@ -71,6 +72,7 @@ class App extends React.Component{
               <Route path="/Accedi" element={<Accedi />} />
               <Route path="/Registrazione" element={<Registra />} />
               <Route path="/RegistrazioneSec" element={<RegistraSec/>} />
+              <Route path="/Account" element={<Account/>} />
               <Route path="*" element={<Errore />} />
             </Routes> 
           </BrowserRouter>

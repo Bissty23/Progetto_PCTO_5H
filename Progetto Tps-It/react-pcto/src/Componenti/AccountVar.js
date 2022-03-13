@@ -8,7 +8,7 @@ class AccountVar extends React.Component {
         if(this.props.datiAccount.Accesso)
             return (  
                 <ul class="navbar-nav">
-                    <li class="nav-item"><Link class="nav-link active" aria-current="page" to="/">{this.props.datiAccount.Email}</Link></li>
+                    <li class="nav-item"><Link class="nav-link breadcrumb-item active" aria-current="page" to="/Account">{this.props.datiAccount.Email}</Link></li>
                 </ul>
             );
         else
