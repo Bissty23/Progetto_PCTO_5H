@@ -27,20 +27,23 @@ const  sql = require('mssql');
 async  function  GetAccount(username) {
   try {
     let  pool = await  sql.connect(config);
-    let  account = await  pool.request().input('username', sql.NChar, username).query("SELECT * from Account where Username = @username");
+    let  account = await  pool.request().input('username', sql.NChar, username).query("SELECT * FROM Account WHERE Username = @username");
     return  account.recordsets;
   }
-  catch (error) {
-    try {
-      let pool = await  sql.connect(config);
-      let account = await  pool.request().input('email', sql.NChar, username).query("SELECT * from Account where Email = @email");
-      return  account.recordsets;
-    }
-    catch (error) { console.log(error); }
+  catch (error) {console.log(error) }
+}
+
+async function GetSedi() {
+  try {
+    let  pool = await  sql.connect(config);
+    let  sedi = await  pool.request().query("SELECT * FROM Sede");
+    return  sedi.recordsets;
   }
+  catch (error) { console.log(error); }
 }
 
 module.exports = {
   //<metodo>: <metodo>
   GetAccount: GetAccount,
+  GetSedi: GetSedi,
 }

@@ -20,17 +20,20 @@ class Accedi extends React.Component {
           <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
         </div>
         <div className="input-group mb-3">
-          <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount($('#InUsername').val(), $('#InPassword').val())} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
+          <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount()} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
         </div>
         
-        <input onClick={() => this.GetAccount($('#InUsername').val(), $('#InPassword').val())} type="button" id="btnAccedi" className="btn btn-dark" value="Accedi"/>
+        <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn btn-dark" value="Accedi"/>
       </div>
     );
   }
 
-  GetAccount = (username, password) =>{ 
+  GetAccount = () =>{ 
+    let username = $('#InUsername').val()
+    let password = $('#InPassword').val()
+
     $('.alert').hide()
-    $('#btnAccedi').prop('disabled', true);
+    $('#btnAccedi').prop('disabled', true)
 
     if(username != ''){
       Axios.get("http://localhost:8090/api/Account/" + username).then(
