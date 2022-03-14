@@ -6,8 +6,10 @@ import Axios from 'axios';
  
 class Registra extends React.Component{
  
-  render(){
-    
+  render() {
+    let sedi = false
+    let classi = false
+
     return(
       <div className="container">
         <div class="input-group mb-3">
@@ -24,10 +26,8 @@ class Registra extends React.Component{
         </div>
 
         <div className="col-sm mb-3 input-group">
-        <select class="form-select" id="sedi" aria-label="Default select example" placeholder='Plesso'>
-        <option value="" selected disabled>--Sede--</option>
-          <option value="1">Pascal</option>
-          <option value="2">Comandini</option>
+        <select onClick={() => this.GetSedi()} class="form-select" id="sedi" aria-label="Default select example" placeholder='Plesso'>
+          <option value="" selected disabled>--Sede--</option>
         </select>
         </div>
 
@@ -45,39 +45,20 @@ class Registra extends React.Component{
         </div>
       </div>
     )
-    
-  }
-  
-  validaPass = (password, ConfPassword) =>{
-      if(password != ConfPassword)
-      {
-        alert("Errore, le due password sono sbagliate")
-      }
   }
 
-  x = () =>{
-
-    Axios.get("http://localhost:8090/api/Sedi").then(
-      (risposta) =>{
-        risposta.forEach(sede => {
-          $('#sedi').append("<option value=" + sede.Codice + ">" + sede.Nome + "/option>")
-        });
-
-      },
-      (errore) =>{ 
-        if(errore.toString().includes("Network Error")) this.Errore("Errore: Connessione al DataBase non riuscita")
-        else this.Errore(errore.toString())
-      }
-    )
+  GetSedi = () => {
+    if(!this.sedi)
+      Axios.get("http://localhost:8090/api/Sedi").then(
+        (risposta) => {
+          risposta.data[0].forEach(sede => { 
+            $('#sedi').append("<option value=" + sede.Codice + ">" + sede.Nome + "</option>") 
+          })
+        },
+        (errore) => { console.log(errore) }
+      )
+      this.sedi = true
   }
-}
+}  
  
 export default Registra
-
-
-
-
-
-
-
-
