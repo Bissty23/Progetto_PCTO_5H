@@ -9,7 +9,7 @@ class Accedi extends React.Component {
   render() {
 
     return(
-      <div className="container mt-4">
+      <div className="container">
         
         <div class="alert alert-danger" role="alert">
           <a id="errore"/>
@@ -23,7 +23,7 @@ class Accedi extends React.Component {
           <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount()} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
         </div>
         
-        <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn btn-dark" value="Accedi"/>
+        <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn" value="Accedi"/>
       </div>
     );
   }

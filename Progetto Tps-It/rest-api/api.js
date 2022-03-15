@@ -36,6 +36,11 @@ router.route('/Account/:username').get((request, response) => {
   }) 
 })
 
+router.route('/Sedi').get((request, response) => { 
+  Db.GetSedi().then((data) => { 
+    response.json(data[0]); 
+  }) 
+})
 
 var  port = process.env.PORT || 8090;
 app.listen(port);

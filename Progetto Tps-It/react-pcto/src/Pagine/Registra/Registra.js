@@ -51,7 +51,7 @@ class Registra extends React.Component{
     if(!this.sedi)
       Axios.get("http://localhost:8090/api/Sedi").then(
         (risposta) => {
-          risposta.data[0].forEach(sede => { 
+          risposta.data.forEach(sede => { 
             $('#sedi').append("<option value=" + sede.Codice + ">" + sede.Nome + "</option>") 
           })
         },
