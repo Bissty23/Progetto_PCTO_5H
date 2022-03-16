@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 class AccountVar extends React.Component {
 
+
+    
+
     render() { 
 
         if(this.props.datiAccount.Accesso)

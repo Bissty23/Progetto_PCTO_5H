@@ -3,27 +3,31 @@ import Axios from 'axios';
 import $ from 'jquery'
 import CryptoJS from 'crypto-js';
 import './Accedi.css'
+import Alert from '../../Componenti/Alert/Alert';
 
 class Accedi extends React.Component {
 
+  state = {errore: ''}
+
   render() {
 
-    return(
-      <div className="container">
-        
-        <div class="alert alert-danger" role="alert">
-          <a id="errore"/>
-          <button onClick={() => ($('.alert').hide())} type="button" class="btn-close"></button>
-        </div>    
+    this.alert = React.createElement(() => <Alert errore={this.state.errore}/>)
 
-        <div className="input-group mb-3">
-          <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
+    return(
+      <div className="container"> 
+        {this.alert}
+        <div className="container">  
+          
+          <div className="input-group mb-3">
+            <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
+          </div>
+          <div className="input-group mb-3">
+            <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount()} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
+          </div>
+          
+          <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn" value="Accedi"/>
+          <input onClick={() => {this.Errore(',jbdshkj')}} type="button" id="btnAccedi" className="btn" value="Accedi"/>
         </div>
-        <div className="input-group mb-3">
-          <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount()} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
-        </div>
-        
-        <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn" value="Accedi"/>
       </div>
     );
   }
@@ -35,12 +39,12 @@ class Accedi extends React.Component {
     $('.alert').hide()
     $('#btnAccedi').prop('disabled', true)
 
-    if(username != ''){
+    if(username !== ''){
       Axios.get("http://localhost:8090/api/Account/" + username).then(
         (risposta) =>{
-          if(risposta.data[0] != undefined)
-            if(password != '')
-              if(CryptoJS.SHA3(password) == risposta.data[0].Password){
+          if(risposta.data[0] !== undefined)
+            if(password !== '')
+              if(CryptoJS.SHA3(password).toString() === risposta.data[0].Password.toString()){
                 localStorage.setItem('accesso', true)
                 localStorage.setItem('username', risposta.data[0].Username)
                 localStorage.setItem('password', risposta.data[0].Password)
@@ -63,12 +67,7 @@ class Accedi extends React.Component {
     } else this.Errore("Errore: Inserire Username o Email")     
   }
 
-  Errore = (errore) => {
-    $('#errore').html(errore + ' ')
-    $('#InPassword').val('')
-    $('.alert').show()
-    $('#btnAccedi').prop('disabled', false)
-  }
+  Errore = (errore) =>{ this.setState({errore: errore}) }
 }
 
 export default Accedi;
