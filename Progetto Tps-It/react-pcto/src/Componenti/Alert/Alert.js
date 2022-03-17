@@ -1,15 +1,17 @@
 import React from 'react'
 import $ from 'jquery'
+import './Alert.css'
 
 class Alert extends React.Component {
 
     render() {
-        return(
-            <div class="alert alert-danger" role="alert">
-                <a id="errore">{this.props.errore}</a>
-                <button onClick={() => ($('.alert').hide())} type="button" class="btn-close"></button>
-            </div>  
-        );
+        if(this.props.errore !== '') return (
+                <div className="container alert alert-danger" role="alert">
+                    {this.props.errore}
+                    <button onClick={() => ($('.alert').hide())} type="button" className="btn-close"/>
+                </div>  
+            )
+        else return <a/> 
     }
 }
 

@@ -16,7 +16,7 @@ class Accedi extends React.Component {
     return(
       <div className="container"> 
         {this.alert}
-        <div className="container">  
+        <div className="container input-form">  
           
           <div className="input-group mb-3">
             <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
@@ -25,18 +25,17 @@ class Accedi extends React.Component {
             <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount()} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
           </div>
           
-          <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn" value="Accedi"/>
-          <input onClick={() => {this.Errore(',jbdshkj')}} type="button" id="btnAccedi" className="btn" value="Accedi"/>
+          <input onClick={() => this.GetAccount()} type="button" id="btnAccedi" className="btn btn-dark" value="Accedi"/>
         </div>
       </div>
     );
   }
 
   GetAccount = () =>{ 
+    this.setState({errore: ''})
     let username = $('#InUsername').val()
     let password = $('#InPassword').val()
 
-    $('.alert').hide()
     $('#btnAccedi').prop('disabled', true)
 
     if(username !== ''){
@@ -67,7 +66,10 @@ class Accedi extends React.Component {
     } else this.Errore("Errore: Inserire Username o Email")     
   }
 
-  Errore = (errore) =>{ this.setState({errore: errore}) }
+  Errore = (errore) =>{ 
+    this.setState({errore: errore})
+    $('#btnAccedi').prop('disabled', false)
+  }
 }
 
 export default Accedi;
