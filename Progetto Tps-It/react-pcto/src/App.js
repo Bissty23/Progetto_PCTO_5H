@@ -21,14 +21,8 @@ class App extends React.Component{
   Email: localStorage.getItem('email'),
   Sede: localStorage.getItem('Sede'),
 }
-
-  // AggiornaSato = (event) => {
-  //   event.preventDefault();
-  //   this.setState({Accesso: true, Username: event.target}) 
-  // }
  
   render(){
-
     console.log(this.state)
 
     return(
@@ -37,34 +31,27 @@ class App extends React.Component{
           <BrowserRouter>
             <nav className="navbar navbar-expand-md navbar-light">
               <div className="container-fluid">
+                <Link className="navbar-brand" to="/">
+                  <img src={Logo} alt="Logo" width="50" height="44" className="d-inline-block align-text-top"/>
+                  Bissty+Lory ♥ 4ever
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <Link className="navbar-brand" to="/">
-                  <img src={Logo} alt="Logo" width="50" height="44" className="d-inline-block align-text-top"/>
-                  <a>Bissty+Lory ♥ 4ever</a>
-                </Link>
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#">Link</a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link disabled">Disabled</a>
-                    </li>
+                    <li className="nav-item"><Link className="nav-link" to='/'>X</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to='/'>Y</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to='/'>Z</Link></li>
                   </ul>
                   {/* <form className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-dark" type="submit">Search</button>
                   </form> */}
+                  <AccountVar datiAccount={ {Accesso: this.state.Accesso, Username: this.state.Username, Email: this.state.Email} }/>
                 </div>
               </div>  
-              <AccountVar datiAccount={ {Accesso: this.state.Accesso, 
-                                        Username: this.state.Username, 
-                                        Email: this.state.Email} }/>
+              
             </nav>
             <br/>
             <Routes>

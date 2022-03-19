@@ -1,6 +1,7 @@
 .btn-close{
     padding-left: 15px;
-    padding-bottom: 12.5px;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
-.alert{ width: 650px; }
+.alert{ width: 650px }
