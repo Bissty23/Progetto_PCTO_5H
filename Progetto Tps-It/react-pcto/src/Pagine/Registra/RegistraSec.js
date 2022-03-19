@@ -1,7 +1,5 @@
 import React from 'react'
 import $ from 'jquery'
-import { Link } from 'react-router-dom';
-
 
 class RegistraSec extends React.Component{
  

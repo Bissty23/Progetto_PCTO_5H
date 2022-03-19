@@ -7,7 +7,7 @@ class Alert extends React.Component {
         if(this.props.errore !== '')
             return (
                 <div className="container alert alert-danger" role="alert">
-                    <a>{this.props.errore}</a>
+                    {this.props.errore}
                     <button onClick={() => ($('.alert').hide())} type="button" className="btn-close"/>
                 </div>  
             )

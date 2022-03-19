@@ -7,9 +7,6 @@ import Axios from 'axios';
 class Registra extends React.Component{
  
   render() {
-    let sedi = false
-    let classi = false
-
     return(
       <div className="container">
         <div class="input-group mb-3">
