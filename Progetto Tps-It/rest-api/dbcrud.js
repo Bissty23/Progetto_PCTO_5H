@@ -1,6 +1,3 @@
-var  port = process.env.PORT || 8090;
-app.listen(port);
-console.log('Le API sono in ascolto sulla porta ' + port);
 var  config = require('./dbconfig');
 const  sql = require('mssql');
 
