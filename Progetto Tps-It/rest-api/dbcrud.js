@@ -1,3 +1,6 @@
+var  port = process.env.PORT || 8090;
+app.listen(port);
+console.log('Le API sono in ascolto sulla porta ' + port);
 var  config = require('./dbconfig');
 const  sql = require('mssql');
 
@@ -42,8 +45,18 @@ async function GetSedi() {
   catch (error) { console.log(error); }
 }
 
+async function GetClassiP() {
+  try {
+    let  pool = await  sql.connect(config);
+    let  sedi = await  pool.request().query("SELECT DISTINCT Classe FROM ListaUtentiScolastici WHERE Classe LIKE '%P'");
+    return  sedi.recordsets;
+  }
+  catch (error) { console.log(error); }
+}
+
 module.exports = {
   //<metodo>: <metodo>
   GetAccount: GetAccount,
   GetSedi: GetSedi,
+  GetClassiP: GetClassiP,
 }

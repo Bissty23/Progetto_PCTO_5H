@@ -25,7 +25,7 @@ router.use((request, response, next) => {
 //   Db.getFilm(request.params.id).then((data) => {
 //     response.json(data[0]);
 //   })
-// })  
+// })
 
 //(ctrl + k) + (ctrl + c) per commentare la parte selezionata 
 //(ctrl + k) + (ctrl + u) per decommentare la parte selezionata 
@@ -42,6 +42,8 @@ router.route('/Sedi').get((request, response) => {
   }) 
 })
 
-var  port = process.env.PORT || 8090;
-app.listen(port);
-console.log('Le API sono in ascolto sulla porta ' + port);
+router.route('/Classi').get((request, response) => { 
+  Db.GetClassiP().then((data) => { 
+    response.json(data[0]); 
+  }) 
+})

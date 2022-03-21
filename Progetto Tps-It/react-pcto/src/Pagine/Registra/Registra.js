@@ -7,6 +7,7 @@ import Axios from 'axios';
 class Registra extends React.Component{
  
   render() {
+
     return(
       <div className="container">
         <div class="input-group mb-3">
@@ -29,7 +30,7 @@ class Registra extends React.Component{
         </div>
 
         <div className="input-group mb-3">
-          <select class="form-select" aria-label="Default select example" placeholder='Plesso'>
+          <select onClick={() => this.GetClassi()} id="classi" class="form-select" aria-label="Default select example" placeholder='Plesso'>
           <option value="" selected disabled>--Classe--</option>
           </select>
         </div>
@@ -54,7 +55,27 @@ class Registra extends React.Component{
         },
         (errore) => { console.log(errore) }
       )
-      this.sedi = true
+    this.sedi = true
+  }
+
+  GetClassi = () => {
+    if(!this.classi)
+    if(($("#sedi option:selected").text()) === "Pascal")
+    {
+      console.log("ciaooo")
+      Axios.get("http://localhost:8090/api/Classi").then(
+        (risposta) => {
+          
+          risposta.data.forEach(Classe => { 
+
+              $('#classi').append("<option value=" + 1 + ">" + (JSON.stringify(Classe)).substring(11,13) + "</option>") 
+            
+          })
+        },
+        (errore) => { console.log(errore) }
+      )
+    }
+    this.classi = true
   }
 }  
  
