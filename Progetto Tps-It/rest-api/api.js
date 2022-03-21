@@ -47,3 +47,7 @@ router.route('/Classi').get((request, response) => {
     response.json(data[0]); 
   }) 
 })
+
+var  port = process.env.PORT || 8090;
+app.listen(port);
+console.log('Le API sono in ascolto sulla porta ' + port);
