@@ -26,34 +26,36 @@ const  sql = require('mssql');
 
 async  function  GetAccount(username) {
   try {
-    let  pool = await  sql.connect(config);
-    let  account = await  pool.request().input('username', sql.NChar, username).query("SELECT * FROM Account WHERE Username = @username");
-    return  account.recordsets;
+    let pool = await sql.connect(config);
+    let account = await pool.request().input('username', sql.NChar, username).query("SELECT * FROM Account WHERE Username = @username");
+    return account.recordsets;
   }
   catch (error) {console.log(error) }
 }
 
 async function GetSedi() {
   try {
-    let  pool = await  sql.connect(config);
-    let  sedi = await  pool.request().query("SELECT * FROM Sede");
-    return  sedi.recordsets;
+    let pool = await sql.connect(config);
+    let sedi = await pool.request().query("SELECT * FROM Sede");
+    return sedi.recordsets;
   }
-  catch (error) { console.log(error); }
+  catch (error) { console.log(error) }
 }
 
-async function GetClassiP() {
+async function GetClassi(CodiceSede) {
   try {
-    let  pool = await  sql.connect(config);
-    let  sedi = await  pool.request().query("SELECT DISTINCT Classe FROM ListaUtentiScolastici WHERE Classe LIKE '%P'");
-    return  sedi.recordsets;
+    let pool = await sql.connect(config);
+    let classi = await pool.request().input('codicesede', sql.Int, CodiceSede).query("SELECT DISTINCT ListaUtentiScolastici.Classe " +
+                                                                                     "FROM ListaUtentiScolastici JOIN Account ON ListaUtentiScolastici.Email = Account.Email JOIN Abilitazione ON Username = Account JOIN Sede ON Sede = Codice " +
+                                                                                     "WHERE Sede.Codice = @codicesede");
+    return classi.recordsets;
   }
-  catch (error) { console.log(error); }
+  catch (error) {console.log(error) }
 }
 
 module.exports = {
   //<metodo>: <metodo>
   GetAccount: GetAccount,
   GetSedi: GetSedi,
-  GetClassiP: GetClassiP,
+  GetClassi: GetClassi,
 }

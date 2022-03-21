@@ -42,8 +42,8 @@ router.route('/Sedi').get((request, response) => {
   }) 
 })
 
-router.route('/Classi').get((request, response) => { 
-  Db.GetClassiP().then((data) => { 
+router.route('/Classi/:codicesede').get((request, response) => { 
+  Db.GetClassi(request.params.codicesede).then((data) => { 
     response.json(data[0]); 
   }) 
 })
