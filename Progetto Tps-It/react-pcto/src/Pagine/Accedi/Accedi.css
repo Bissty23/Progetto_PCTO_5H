@@ -1,7 +1,7 @@
 .container .input-form{
     background-color: var(--navbarcolor);
     border-radius: 10px;
-    width: 600px;
+    max-width: 600px;
     height: auto;
 
     padding-top: 10px;

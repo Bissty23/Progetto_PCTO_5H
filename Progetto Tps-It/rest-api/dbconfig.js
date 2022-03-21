@@ -1,6 +1,6 @@
 const config = {
     user: "sa",
-    password: "ciao1234",
+    password: "burbero2020",
     server:"localhost",
     database: "PCTO",
     options: {
