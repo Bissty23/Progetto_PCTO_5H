@@ -2,7 +2,7 @@ import React from 'react'
 import Axios from 'axios';
 import $ from 'jquery'
 import CryptoJS from 'crypto-js';
-import './Accedi.css'
+import '../../cssCondivisi/Input-Form.css'
 import Alert from '../../Componenti/Alert/Alert';
 
 class Accedi extends React.Component {
