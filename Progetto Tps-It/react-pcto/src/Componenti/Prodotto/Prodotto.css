@@ -1,0 +1,19 @@
+#contenitore {
+    background-color: rgb(255, 226, 98);
+
+    width: 400px;
+    border-radius: 15px;
+}
+
+#Titolo {
+    font-size: xx-large;
+    color: brown;
+}
+
+.img-fluid {
+    padding-top: 15px;
+    padding-bottom: 25px;
+
+    width: 75%;
+    height: 100%;
+}

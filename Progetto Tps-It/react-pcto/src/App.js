@@ -8,9 +8,9 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Accedi from './Pagine/Accedi/Accedi'
 import Account from './Pagine/Account/Accout'
+import Prodotto from './Componenti/Prodotto/Prodotto.js'
  
 class App extends React.Component{
-
 
  state =  {
   Accesso: localStorage.getItem('accesso'),
@@ -54,6 +54,24 @@ class App extends React.Component{
               
             </nav>
             <br/>
+
+            <div class="container">
+              <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                  <Prodotto prodotto='Panino Con Mortadella'/>
+                </div>
+                <div class="col-md-auto">
+                  <Prodotto/>
+                </div>
+                <div class="col-md-auto">
+                  <Prodotto/>
+                </div>
+                <div class="col-md-auto">
+                  <Prodotto/>
+                </div>
+              </div>
+            </div>
+            
             <Routes>
               <Route path="/"/>
               <Route path="/Accedi" element={<Accedi />} />
