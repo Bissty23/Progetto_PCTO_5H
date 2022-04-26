@@ -53,9 +53,28 @@ async function GetClassi(CodiceSede) {
   catch (error) {console.log(error) }
 }
 
+async function GetProdotti() {
+  try {
+    let pool = await sql.connect(config);
+    let prodotti = await pool.request().query("SELECT * FROM Prodotto");
+    return prodotti.recordsets;
+  }
+  catch (error) { console.log(error) }
+}
+
+async function GetProdotto(Prodotto) {
+  try {
+    let pool = await sql.connect(config);
+    let prodotto = await pool.request().input('prodotto', sql.NChar, Prodotto).query("SELECT * FROM Prodotto WHERE Nome = @prodotto");
+    return prodotto.recordsets;
+  }
+  catch (error) { console.log(error) }
+}
+
 module.exports = {
-  //<metodo>: <metodo>
   GetAccount: GetAccount,
   GetSedi: GetSedi,
   GetClassi: GetClassi,
+  GetProdotti: GetProdotti,
+  GetProdotto: GetProdotto,
 }

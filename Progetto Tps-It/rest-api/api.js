@@ -48,6 +48,18 @@ router.route('/Classi/:codicesede').get((request, response) => {
   }) 
 })
 
+router.route('/Prodotti').get((request, response) => { 
+  Db.GetProdotti().then((data) => { 
+    response.json(data[0]); 
+  }) 
+})
+
+router.route('/Prodotto/:nome').get((request, response) => {
+  Db.GetProdotto(request.params.nome).then((data) => { 
+    response.json(data[0]); 
+  }) 
+})
+
 var  port = process.env.PORT || 8090;
 app.listen(port);
 console.log('Le API sono in ascolto sulla porta ' + port);

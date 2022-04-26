@@ -3,17 +3,23 @@
 
     width: 400px;
     border-radius: 15px;
+
+    text-decoration: none; 
 }
 
-#Titolo {
+
+#titolo {
     font-size: xx-large;
-    color: brown;
+     color: darkred;
 }
 
-.img-fluid {
+#img {
     padding-top: 15px;
     padding-bottom: 25px;
 
     width: 75%;
-    height: 100%;
+}
+
+#link {
+    text-decoration: none;
 }

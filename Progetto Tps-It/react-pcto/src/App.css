@@ -7,3 +7,8 @@
   border-bottom-left-radius: 20px;
   background-color: var(--navbarcolor);
 }
+
+.a{
+  padding: 15px;
+  color: aliceblue;
+}
