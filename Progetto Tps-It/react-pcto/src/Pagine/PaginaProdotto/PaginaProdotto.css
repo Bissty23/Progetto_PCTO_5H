@@ -1,3 +1,8 @@
 #img1 {
     width: 575px;
 }
+
+#contenitoreDescrizione{
+    background-color: rgb(255, 226, 98);
+    border-radius: 15px;
+}

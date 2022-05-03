@@ -20,7 +20,7 @@ class Prodotto extends React.Component {
                 <Link id='link' to={ window.location.pathname + '/' + nomeProdotto } >
                     <img src={logo} id='img' className="img-fluid" alt={nomeProdotto + 'png'} />
                     <p id="titolo"> {nomeProdotto} </p>
-                    fhjsdh
+                    <p id="descrizione" className="float-start"> { this.props.prodotto.Descrizione } </p>
                 </Link>
             </div>
         )    

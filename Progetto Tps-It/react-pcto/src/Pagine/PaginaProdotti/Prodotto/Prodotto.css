@@ -6,7 +6,6 @@
     margin-bottom: 50px;
 }
 
-
 #titolo {
     font-size: xx-large;
      color: darkred;
@@ -21,4 +20,9 @@
 
 #link {
     text-decoration: none;
+}
+
+#descrizione{ 
+    color: black;
+    padding-left: 15px;
 }

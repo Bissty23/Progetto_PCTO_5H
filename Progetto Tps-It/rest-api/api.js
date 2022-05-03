@@ -56,7 +56,7 @@ router.route('/Prodotti').get((request, response) => {
 
 router.route('/Prodotto/:nome').get((request, response) => {
   Db.GetProdotto(request.params.nome).then((data) => { 
-    response.json(data[0]); 
+    response.json(data[0][0]); 
   }) 
 })
 

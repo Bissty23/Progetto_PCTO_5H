@@ -17,11 +17,21 @@ class X extends React.Component {
             console.log('immagine non trovata');
         }
         
-        if(this.state.ok)
+        if(this.state.ok) 
             return( 
                 <div className="contaner float-start">
-                    <p id='titolo'>{this.state.prodotto}</p>
-                    <img src={img} id='img1' className="img-fluid" alt={this.state.prodotto} />
+                    <p id='titolo' className="float-start mb-4" style={ {paddingLeft: "22px"} }>{this.state.prodotto.Nome}</p>
+                    <div className="container row"> 
+                        <div className="col">
+                            <img src={img} id='img1' className="img-fluid" alt={this.state.prodotto.Nome} />
+                        </div>
+                        <div className="col" >
+                            <div className="container">
+                                <p style={{fontSize: 30}}>Descrizione</p>
+                                <p style={{fontSize: 18}} className="float-start">{this.state.prodotto.Descrizione}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div> 
             )
         else return <div> Questo Prodotto Non è stato Trovato 
@@ -32,7 +42,7 @@ class X extends React.Component {
 
     componentDidMount () {
         Axios.get("http://localhost:8090/api/Prodotto/" + this.props.x).then(
-            (risposta) => this.setState({prodotto : risposta.data[0].Nome, ok : true})
+            (risposta) => this.setState({prodotto : risposta.data, ok : true})
         )
     }
 }
