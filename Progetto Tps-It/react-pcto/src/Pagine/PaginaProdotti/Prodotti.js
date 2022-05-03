@@ -1,32 +1,35 @@
 import Axios from "axios"
 import React from "react"
 import Prodotto from "./Prodotto/Prodotto"
+import Loading from "../../img/spongebob_loading.gif"
 
 class Prodotti extends React.Component {
 
-    state = {ok : false}
+    state = {ok: false, errore: null}
 
     render () {
-      var x ='dfjsh'
-        return( 
-          <div className="container">
-            <div className="row justify-content-md-left"> 
-              {this.prodotti} 
-            </div>
-          </div>        
-        )
+        if(this.state.ok) return( 
+            <div className="container">
+              <div className="row justify-content-md-left"> 
+                {this.prodotti} 
+              </div>
+            </div>        
+          )
+        else return( 
+            <div className="container">
+              <img src={Loading} id='img' className="img-fluid" alt='Loading' style={ {height : '30%', width : '30%' } }/>
+            </div>        
+          )
     }
 
     componentDidMount () {
-      const prodotti = []
-
-        if(!this.state.ok)
-          Axios.get("http://localhost:8090/api/Prodotti").then((risposta) => {
-            prodotti.length = 0
-            risposta.data.forEach(prodotto => prodotti.push(prodotto));
-            this.prodotti = prodotti.map((prodotto) => <Prodotto prodotto={prodotto} />)
-            this.setState({ok : true})    
-          })
+      if(!this.state.ok)
+        Axios.get("http://localhost:8090/api/Prodotti").then((risposta) => {
+          this.prodotti = risposta.data.map((prodotto) => <Prodotto prodotto={prodotto} />)
+          this.setState({ok : true})
+        },
+        (errore) => this.setState({errore : errore})
+        )
     }
 }
 

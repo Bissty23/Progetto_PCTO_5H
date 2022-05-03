@@ -1,35 +1,42 @@
 import React from "react"
 import { useParams, Link } from "react-router-dom"
 import Axios from 'axios'
+import "./PaginaProdotto.css"
 
 class X extends React.Component {
-    constructor(props){
-        super(props)
-    }
-
+    
     state = { prodotto : null, ok : false }
 
     render(){ 
+        var img; 
 
-        console.log(this.state.prodotto);
-
+        try {
+            img = require('../../img/Prodotti/' + this.props.x + '.png') 
+        }
+        catch {
+            console.log('immagine non trovata');
+        }
+        
         if(this.state.ok)
-            return <div>{this.props.x}</div> 
+            return( 
+                <div className="contaner float-start">
+                    <p id='titolo'>{this.state.prodotto}</p>
+                    <img src={img} id='img' className="img-fluid" alt={this.state.prodotto} />
+                </div> 
+            )
         else return <div> Questo Prodotto Non è stato Trovato 
-            <br/>
-            <Link to='/Prodotti' className="btn btn-dark md-4"> Torna indietro</Link>
-        </div> 
+                <br/>
+                <Link to='/Prodotti' className="btn btn-dark md-4"> Torna indietro</Link>
+            </div> 
     }
 
     componentDidMount () {
-        Axios.get("http://localhost:8090/api/Prodotto/" + this.props.x).then((risposta) => {
-            this.setState({prodotto : risposta.data, ok : true})    
-        })
+        Axios.get("http://localhost:8090/api/Prodotto/" + this.props.x).then(
+            (risposta) => this.setState({prodotto : risposta.data[0].Nome, ok : true})
+        )
     }
 }
 
-function PaginaProdotti() {
-    return <X x={useParams().prodotto}/>
-}
+function PaginaProdotti() { return <X x={useParams().prodotto}/> }
  
 export default PaginaProdotti;
