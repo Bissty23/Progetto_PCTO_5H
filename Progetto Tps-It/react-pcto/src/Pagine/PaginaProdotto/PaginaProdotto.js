@@ -4,7 +4,7 @@ import Axios from 'axios'
 import "./PaginaProdotto.css"
 
 class X extends React.Component {
-    
+
     state = { prodotto : null, ok : false }
 
     render(){ 
@@ -21,7 +21,7 @@ class X extends React.Component {
             return( 
                 <div className="contaner float-start">
                     <p id='titolo'>{this.state.prodotto}</p>
-                    <img src={img} id='img' className="img-fluid" alt={this.state.prodotto} />
+                    <img src={img} id='img1' className="img-fluid" alt={this.state.prodotto} />
                 </div> 
             )
         else return <div> Questo Prodotto Non è stato Trovato 

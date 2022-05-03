@@ -1,12 +1,12 @@
 USE [master]
 GO
-/****** Object:  Database [PCTO]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Database [PCTO]    Script Date: 03/05/2022 10:53:50 ******/
 CREATE DATABASE [PCTO]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'PCTO', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\PCTO.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'PCTO', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\PCTO.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'PCTO_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\PCTO_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'PCTO_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\PCTO_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
  WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
 ALTER DATABASE [PCTO] SET COMPATIBILITY_LEVEL = 150
@@ -76,11 +76,13 @@ ALTER DATABASE [PCTO] SET DELAYED_DURABILITY = DISABLED
 GO
 ALTER DATABASE [PCTO] SET ACCELERATED_DATABASE_RECOVERY = OFF  
 GO
+EXEC sys.sp_db_vardecimal_storage_format N'PCTO', N'ON'
+GO
 ALTER DATABASE [PCTO] SET QUERY_STORE = OFF
 GO
 USE [PCTO]
 GO
-/****** Object:  Table [dbo].[Abilitazione]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Abilitazione]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +97,7 @@ CREATE TABLE [dbo].[Abilitazione](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Account]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Account]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +115,7 @@ CREATE TABLE [dbo].[Account](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +133,7 @@ CREATE TABLE [dbo].[Cliente](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CompostoDa]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[CompostoDa]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -146,7 +148,7 @@ CREATE TABLE [dbo].[CompostoDa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Effettua]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Effettua]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,7 +163,7 @@ CREATE TABLE [dbo].[Effettua](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Giacenza]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Giacenza]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,7 +183,7 @@ CREATE TABLE [dbo].[Giacenza](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ListaUtentiScolastici]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[ListaUtentiScolastici]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,7 +200,7 @@ CREATE TABLE [dbo].[ListaUtentiScolastici](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Menu]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Menu]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +218,7 @@ CREATE TABLE [dbo].[Menu](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Prenotazione]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Prenotazione]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -234,14 +236,14 @@ CREATE TABLE [dbo].[Prenotazione](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Prodotto]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Prodotto]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Prodotto](
 	[Codce] [int] IDENTITY(1,1) NOT NULL,
-	[Nome] [nchar](20) NOT NULL,
+	[Nome] [nchar](40) NOT NULL,
 	[Descrizione] [nchar](50) NULL,
 	[Note] [nchar](50) NULL,
 	[Prezzo] [float] NOT NULL,
@@ -252,7 +254,7 @@ CREATE TABLE [dbo].[Prodotto](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Registrazione]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Registrazione]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -267,7 +269,7 @@ CREATE TABLE [dbo].[Registrazione](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Ritiro]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Ritiro]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -284,7 +286,7 @@ CREATE TABLE [dbo].[Ritiro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Sede]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[Sede]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -302,7 +304,7 @@ CREATE TABLE [dbo].[Sede](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipologiaProdotto]    Script Date: 16/03/2022 16:16:39 ******/
+/****** Object:  Table [dbo].[TipologiaProdotto]    Script Date: 03/05/2022 10:53:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3639,6 +3641,14 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'zorio                                             ', N'guerra                                            ', N'zorio.guerra@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
+SET IDENTITY_INSERT [dbo].[Prodotto] ON 
+GO
+INSERT [dbo].[Prodotto] ([Codce], [Nome], [Descrizione], [Note], [Prezzo], [TipologiaProdotto]) VALUES (1, N'La Mortadellazza                        ', N'Panino con la Mortadella                          ', NULL, 3.8, 1)
+GO
+INSERT [dbo].[Prodotto] ([Codce], [Nome], [Descrizione], [Note], [Prezzo], [TipologiaProdotto]) VALUES (2, N'Panino con il Prosciutto Crudo          ', NULL, NULL, 4.2, 1)
+GO
+SET IDENTITY_INSERT [dbo].[Prodotto] OFF
+GO
 SET IDENTITY_INSERT [dbo].[Sede] ON 
 GO
 INSERT [dbo].[Sede] ([Codice], [Tipo], [Descrizione], [Indirizzo], [Nome], [Telefono]) VALUES (1, NULL, NULL, N'''X''                           ', N'''FE''                ', 76643765)
@@ -3646,6 +3656,12 @@ GO
 INSERT [dbo].[Sede] ([Codice], [Tipo], [Descrizione], [Indirizzo], [Nome], [Telefono]) VALUES (2, NULL, NULL, N'''casadife''                    ', N'''FA''                ', 5426389)
 GO
 SET IDENTITY_INSERT [dbo].[Sede] OFF
+GO
+SET IDENTITY_INSERT [dbo].[TipologiaProdotto] ON 
+GO
+INSERT [dbo].[TipologiaProdotto] ([Codice], [Nome], [Descrizione]) VALUES (1, N'Panini              ', NULL)
+GO
+SET IDENTITY_INSERT [dbo].[TipologiaProdotto] OFF
 GO
 ALTER TABLE [dbo].[Abilitazione]  WITH CHECK ADD  CONSTRAINT [FK_Abilitazione_Account] FOREIGN KEY([Account])
 REFERENCES [dbo].[Account] ([Username])
