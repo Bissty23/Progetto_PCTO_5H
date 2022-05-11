@@ -10,7 +10,7 @@ class Accedi extends React.Component {
   state = {errore: ''}
 
   render() {
-    this.alert = React.createElement(() => <Alert errore={this.state.errore}/>)
+    this.alert = React.createElement(() => <Alert messaggio={ { messaggio: this.state.errore, tipo: 'E' }} />)
 
     return(
       <div className="container"> 
@@ -36,7 +36,7 @@ class Accedi extends React.Component {
 
     if(username !== '')
       if(password !== '')
-        Axios.get("http://localhost:8090/api/Account/" + username).then(
+        Axios.get("http://79.49.244.79:8090/api/Account/" + username).then(
           (risposta) => {
             if(risposta.data[0] !== undefined)
               if(CryptoJS.SHA3(password).toString() === risposta.data[0].Password.toString()){
@@ -59,7 +59,7 @@ class Accedi extends React.Component {
           }
         )
       else this.Errore("Errore: Inserire la Password")
-    else this.Errore("Errore: Inserire Username o Email")     
+    else this.Errore("Errore: Inserire Username e Email")     
   }
 
   Errore = (errore) => { 

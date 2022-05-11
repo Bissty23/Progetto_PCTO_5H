@@ -2,10 +2,11 @@ import React from "react"
 import { useParams, Link } from "react-router-dom"
 import Axios from 'axios'
 import "./PaginaProdotto.css"
+import Alert from '../../Componenti/Alert/Alert'
 
 class X extends React.Component {
 
-    state = { prodotto : null, ok : false }
+    state = { prodotto : null, ok : false, messaggio: '', tipo: '', link: '' }
 
     render(){ 
         var img; 
@@ -16,6 +17,8 @@ class X extends React.Component {
         catch {
             console.log('immagine non trovata');
         }
+
+        this.alert = React.createElement(() => <Alert messaggio={ { messaggio: this.state.messaggio, tipo: this.state.tipo }} link={ this.state.link }/>)
         
         if(this.state.ok) 
             return( 
@@ -27,11 +30,16 @@ class X extends React.Component {
                         </div>
                         <div className="col" >
                             <div className="container">
-                                <p style={{fontSize: 30}}>Descrizione</p>
-                                <p style={{fontSize: 18}} className="float-start">{this.state.prodotto.Descrizione}</p>
+                                <p style={ {fontSize: 30} }>Descrizione</p>
+                                <p style={ {fontSize: 18} } className="float-start">{this.state.prodotto.Descrizione}</p>
                             </div>
                         </div>
                     </div>
+                    <div className="container">
+                        <p style={ {fontSize: 30} } className="float-start mt-4">Prezzo: €{this.state.prodotto.Prezzo}0</p>
+                        <a  class="btn btn-dark" role="button" onClick={ () => this.Ordina() }>ORDINA</a>
+                    </div>
+                    {this.alert}
                 </div> 
             )
         else return <div> Questo Prodotto Non è stato Trovato 
@@ -41,10 +49,36 @@ class X extends React.Component {
     }
 
     componentDidMount () {
-        Axios.get("http://localhost:8090/api/Prodotto/" + this.props.x).then(
+        Axios.get("http://79.49.244.79:8090/api/Prodotto/" + this.props.x).then(
             (risposta) => this.setState({prodotto : risposta.data, ok : true})
         )
     }
+
+    Ordina = () => {
+
+        const Account = {
+            Accesso: localStorage.getItem('accesso'),
+            Username: localStorage.getItem('username'),
+            Password: localStorage.getItem('password'),
+            NumeroDiTelefono: localStorage.getItem('numeroditelefono'),
+            Ruolo: localStorage.getItem('ruolo'),
+            Email: localStorage.getItem('email'),
+            Sede: localStorage.getItem('Sede'),
+        }
+
+        if(Account.Accesso){
+            this.Alert(true, "ciao", 'Accedi')
+        }
+        else{
+            this.Alert(false, "Devi fare l'accesso prima di poter fare un ordine", 'Accedi')
+        }
+    }
+
+    Alert = (ok, msg, link) => { 
+        if(ok)
+            this.setState( {messaggio: msg, tipo: 'S', link: link } )
+        else this.setState( {messaggio: msg, tipo: 'E', link: link } )
+      }
 }
 
 function PaginaProdotti() { return <X x={useParams().prodotto}/> }
