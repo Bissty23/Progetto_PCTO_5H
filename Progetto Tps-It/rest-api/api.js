@@ -42,9 +42,9 @@ router.route('/Sedi').get((request, response) => {
   }) 
 })
 
-router.route('/Classi/:codicesede').get((request, response) => { 
-  Db.GetClassi(request.params.codicesede).then((data) => { 
-    response.json(data[0]); 
+router.route('/Classi/:letteraSede').get((request, response) => { 
+  Db.GetClassi(request.params.letteraSede).then((data) => { 
+    response.json(data); 
   }) 
 })
 
@@ -58,6 +58,38 @@ router.route('/Prodotto/:nome').get((request, response) => {
   Db.GetProdotto(request.params.nome).then((data) => { 
     response.json(data[0][0]); 
   }) 
+})
+
+router.route('/Profili').get((request, response) => { 
+  Db.GetProfili().then((data) => { 
+    response.json(data[0]); 
+  }) 
+})
+
+router.route('/Email/:ruolo').get((request, response) => { 
+  Db.GetEmail(request.params.ruolo).then((data) => { 
+    response.json(data); 
+  }) 
+})
+
+router.route('/Classi/:letteraSede').get((request, response) => { 
+  Db.GetClassi(request.params.letteraSede).then((data) => { 
+    response.json(data); 
+  }) 
+})
+
+
+
+router.route('/Registra').post((req, res)=>{
+  let {Username,Password,NumeroDiTelefono,Ruolo,Email,Classe} = req.body;
+    Db.Registrazione(Username,Password,NumeroDiTelefono,Ruolo,Email,Classe,(error, result)=>{
+      if(error){
+            res.status(500).send({error:error});
+      }else{
+            res.status(200).send({success:true ,result});
+      }
+
+    });
 })
 
 var  port = process.env.PORT || 8090;

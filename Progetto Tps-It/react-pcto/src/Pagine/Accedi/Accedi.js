@@ -36,7 +36,7 @@ class Accedi extends React.Component {
 
     if(username !== '')
       if(password !== '')
-        Axios.get("http://79.49.244.79:8090/api/Account/" + username).then(
+        Axios.get("http://localhost:8090/api/Account/" + username).then(
           (risposta) => {
             if(risposta.data[0] !== undefined)
               if(CryptoJS.SHA3(password).toString() === risposta.data[0].Password.toString()){
