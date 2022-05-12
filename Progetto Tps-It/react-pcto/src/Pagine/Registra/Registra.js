@@ -127,11 +127,8 @@ class Registra extends React.Component{
                     this.Errore("Esiste già un account con questo username")
                     flag = false
                   }
-<<<<<<< HEAD
                   if(($("#inStaticEmail").val()).toLowerCase() == (profili.Email).toLowerCase().trim())
-=======
-                  if(($("#inStaticEmail").val()).toLowerCase() === (profili.Email).toLowerCase().trim())
->>>>>>> 62f903127b74943f18a72ce6e502acf0b0f49777
+
                   {
                     this.Errore("Esiste già un account associato a questa email")
                     flag = false
