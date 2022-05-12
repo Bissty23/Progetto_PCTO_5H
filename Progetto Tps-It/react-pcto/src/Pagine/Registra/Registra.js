@@ -128,7 +128,7 @@ class Registra extends React.Component{
                     this.Errore("Esiste già un account con questo username")
                     flag = false
                   }
-                  if(($("#inStaticEmail").val()).toLowerCase() == (profili.Email).toLowerCase())
+                  if(($("#inStaticEmail").val()).toLowerCase() == (profili.Email).toLowerCase().trim())
                   {
                     this.Errore("Esiste già un account associato a questa email")
                     flag = false
@@ -194,13 +194,7 @@ class Registra extends React.Component{
 
     Errore = (errore) => { 
       this.setState( {errore: errore} )
-<<<<<<< HEAD
     }
-=======
-      $('#btnAccedi').prop('disabled', false)
-  }
-  
->>>>>>> 9ad5e69a30fbf9786730b433882ddfed13eec3fc
 }
  
 export default Registra

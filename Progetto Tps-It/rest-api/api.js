@@ -74,8 +74,8 @@ router.route('/Registra').post((req, res)=>{
 })
 
 router.route('/Prenota').post((req, res)=>{
-  let {Codice,DataOraInvio,Stato,Account,SedeRitiro,DTORitiro} = req.body;
-    Db.Prenotazione(Codice,DataOraInvio,Stato,Account,SedeRitiro,DTORitiro,(error, result)=>{
+  let {Account,Prodotto} = req.body;
+    Db.Prenotazione(Account,Prodotto, 2, (error, result)=>{
       if(error)
         res.status(500).send({error:error});
       else

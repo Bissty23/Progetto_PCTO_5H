@@ -27,5 +27,4 @@ class Prodotto extends React.Component {
     }    
 }
 
-
 export default Prodotto;
