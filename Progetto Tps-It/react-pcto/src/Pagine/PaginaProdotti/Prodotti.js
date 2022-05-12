@@ -24,7 +24,7 @@ class Prodotti extends React.Component {
 
     componentDidMount () {
       if(!this.state.ok)
-        Axios.get("http://79.49.244.79:8090/api/Prodotti").then((risposta) => {
+        Axios.get("http://localhost:8090/api/Prodotti").then((risposta) => {
           this.prodotti = risposta.data.map((prodotto) => <Prodotto prodotto={prodotto} />)
           this.setState({ok : true})
         },

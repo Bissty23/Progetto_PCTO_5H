@@ -49,7 +49,7 @@ class X extends React.Component {
     }
 
     componentDidMount () {
-        Axios.get("http://79.49.244.79:8090/api/Prodotto/" + this.props.x).then(
+        Axios.get("http://localhost:8090/api/Prodotto/" + this.props.x).then(
             (risposta) => this.setState({prodotto : risposta.data, ok : true})
         )
     }

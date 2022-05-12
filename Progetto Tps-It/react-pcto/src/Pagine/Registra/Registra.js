@@ -20,7 +20,7 @@ class Registra extends React.Component{
 
       <div className="container"> 
         {this.alert}
-
+        
         <div className="container input-form"> 
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Username" id="inUserName"/>   
@@ -57,9 +57,6 @@ class Registra extends React.Component{
           <div class="col-sm mt-5">
             <button onClick={() => this.Postino()} type="button" class="btn btn-dark mt-4 md-4">Registrati</button>
           </div>
-          <div>
-            {/* <Link  aria-current="page" id='linkReg' to="/RegistrazioneSec">Non sei uno studente?</Link>   */}
-          </div>
         </div>
       </div>
     )
@@ -92,9 +89,9 @@ class Registra extends React.Component{
 
   }
   
-
   Postino = () => 
   {
+    
     if(($("#classi option:selected").text()).trim() == "--Classe--")
       {
         var ruolo = "A"
@@ -121,7 +118,6 @@ class Registra extends React.Component{
             {
               this.Errore("Non è stato possibile creare il tuo account, se si è docenti o ATA selezionare solo il plesso, se si è studenti selezionare la classe oltre al plesso")
             }
-            
 
             Axios.get("http://localhost:8090/api/Profili").then(
               (risposta) => {
@@ -130,17 +126,27 @@ class Registra extends React.Component{
                   {
                     if($("#inUserName").val() == profili.Username)
                   {
-                    this.Errore("esiste già un account con questo username pezzo di merda")
+                    this.Errore("Esiste già un account con questo username")
                     flag = false
                   }
                   if(($("#inStaticEmail").val()).toLowerCase() == (profili.Email).toLowerCase())
                   {
-                    this.Errore("esiste già un account associato a questa email pezzo di merda")
+                    this.Errore("Esiste già un account associato a questa email")
                     flag = false
                   }
                   if($("#inPassword").val() !== $("#inConfPassword").val())
                   {
-                    this.Errore("scrivi bene le password pezzo di merda")
+                    this.Errore("Le due password non combaciano")
+                    flag = false
+                  }
+                  if(isNaN($("#inNumeroTelefono").val()))
+                  {
+                    this.Errore("Il numero di telefono inserito non è valido")
+                    flag = false
+                  }
+                  if(($("#inStaticEmail").val() || $("#inUserName").val() || $("#inPassword").val() || $("#inNumeroTelefono").val() || $("#inConfPassword").val()) === "")
+                  {
+                    this.Errore("Per poterti registrare devi compilare tutti i campi")
                     flag = false
                   }
                   }
@@ -162,9 +168,22 @@ class Registra extends React.Component{
                           console.log(res.data);
                       }
                     )
+                    window.location.href="/"
                   }
                   console.log(payload);
                 }
+                $("#inUserName").val('')
+                $("#inPassword").val('') 
+                $("#inConfPassword").val('')
+                $("#inNumeroTelefono").val('') 
+                $("#inStaticEmail").val('') 
+                $("#classi").empty()
+                $("#sedi").empty()
+                $('#sedi').append("<option>"+"--Sede--"+"</option>")
+                $('#classi').append("<option>"+"--Classe--"+"</option>")
+
+                this.sedi = false
+                this.classi = false
               },
               (errore) => { console.log(errore) }
             )
@@ -177,7 +196,8 @@ class Registra extends React.Component{
     Errore = (errore) => { 
       this.setState( {errore: errore} )
       $('#btnAccedi').prop('disabled', false)
-    }
+  }
+  
 }
  
 export default Registra

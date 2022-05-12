@@ -95,7 +95,7 @@ async function Registrazione(Username, Password, NumeroDiTelefono, Ruolo, Email,
       var risultato = await connection.request()
       .input('Username', sql.VarChar, Username)
       .input('Password', sql.VarChar, Password)
-      .input('NumeroDiTelefono', sql.Int, NumeroDiTelefono)
+      .input('NumeroDiTelefono', sql.Numeric, NumeroDiTelefono)
       .input('Ruolo', sql.VarChar, Ruolo)
       .input('Email', sql.VarChar, Email)
       .input('Classe', sql.VarChar, Classe)
