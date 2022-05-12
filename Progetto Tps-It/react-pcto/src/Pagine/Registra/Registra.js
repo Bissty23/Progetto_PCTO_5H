@@ -1,7 +1,6 @@
 import React from 'react';
 import $ from 'jquery'
 import './Registra.css'
-import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import '../../cssCondivisi/Input-Form.css'
 import Alert from '../../Componenti/Alert/Alert';
@@ -67,7 +66,7 @@ class Registra extends React.Component{
 
   GetSedi = () => {
     if(!this.sedi)
-      Axios.get("http://localhost:8090/api/Sedi").then(
+      Axios.get("http://" + window.location.hostname + ":8090/api/Sedi").then(
         (risposta) => {
           risposta.data.forEach(sede => { 
             $('#sedi').append("<option value=" + sede.Codice + ">" + sede.Nome + "</option>") 
@@ -82,7 +81,7 @@ class Registra extends React.Component{
   GetClassi = () => { 
     if(!this.classi)
     {
-      Axios.get("http://localhost:8090/api/Classi/"+ ($("#sedi option:selected").text()[0])).then(
+      Axios.get("http://" + window.location.hostname + ":8090/api/Classi/"+ ($("#sedi option:selected").text()[0])).then(
         (risposta) => {
           risposta.data[0].forEach(Classe => { $('#classi').append("<option>" + Classe.Classe.toString().substring(0,2) + "</option>")  })
         },
@@ -104,7 +103,7 @@ class Registra extends React.Component{
       }
       if(!this.classi)
       {
-        Axios.get("http://localhost:8090/api/Email/"+ruolo).then(
+        Axios.get("http://" + window.location.hostname + ":8090/api/Email/"+ruolo).then(
           (risposta) => {
             risposta.data[0].forEach(email => {
               if(!flag)
@@ -123,7 +122,7 @@ class Registra extends React.Component{
             }
             
 
-            Axios.get("http://localhost:8090/api/Profili").then(
+            Axios.get("http://" + window.location.hostname + ":8090/api/Profili").then(
               (risposta) => {
                 risposta.data.forEach(profili => { 
                   if(flag)
@@ -156,7 +155,7 @@ class Registra extends React.Component{
                       Email:$("#inStaticEmail").val(),
                       Classe:($("#classi option:selected").text()).trim()
                     }
-                    Axios.post('http://localhost:8090/api/Registra', payload)
+                    Axios.post("http://" + window.location.hostname + ":8090/api/Registra", payload)
                       .then(res => {
                           console.log(res);
                           console.log(res.data);
@@ -176,7 +175,6 @@ class Registra extends React.Component{
 
     Errore = (errore) => { 
       this.setState( {errore: errore} )
-      $('#btnAccedi').prop('disabled', false)
     }
 }
  

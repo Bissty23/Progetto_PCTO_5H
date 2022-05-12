@@ -1,29 +1,6 @@
 var  config = require('./dbconfig');
 const  sql = require('mssql');
 
-// async  function  <Nome Metodo>() {
-//   try {
-//     let  pool = await  sql.connect(config);
-//     let  <VAR> = await  pool.request().query("<Query>");
-//     return  <VAR>.recordsets;
-//   }
-//   catch (error) { console.log(error); }
-// }
-
-// async  function  <Nome Metodo>(<Parametro>) {
-//   try {
-//     let  pool = await  sql.connect(config);
-//     let  <VAR> = await  pool.request()
-//     .input('<nome per parametro>', sql.Int, <Parametro>) // da fare per ogni parametro
-//     .query("<Query> where <Parametro> = @<nome per parametro>");
-//     return  <VAR>.recordsets;
-//   }
-//   catch (error) { console.log(error); }
-// }
-
-//(ctrl + k) + (ctrl + c) per commentare la parte selezionata 
-//(ctrl + k) + (ctrl + u) per decommentare la parte selezionata 
-
 async  function  GetAccount(username) {
   try {
     let pool = await sql.connect(config);
@@ -105,7 +82,22 @@ async function Registrazione(Username, Password, NumeroDiTelefono, Ruolo, Email,
   catch (error) {return callback(error)}
 }
 
-
+async function Prenotazione(Codice, DataOraInvio, Stato, Account, SedeRitiro, DTORitiro, callback = () => {}){
+  try{
+      let query = 'INSERT INTO [dbo].[Prenotazione] ([Codice], [DataOraInvio], [Stato], [Account], [SedeRitiro], [DTORitiro]) VALUES (@Codice, @DataOraInvio, @Stato, @Account, @SedeRitiro, @DTORitiro)';
+      let connection = await sql.connect(config);
+      var risultato = await connection.request()
+      .input('Codice', sql.Int, Codice)
+      .input('DataOraInvio', sql.DateTime, DataOraInvio)
+      .input('Stato', sql.NChar, Stato)
+      .input('Account', sql.NChar, Account)
+      .input('SedeRitiro', sql.Int, SedeRitiro)
+      .input('DTORitiro', sql.DateTime, DTORitiro)
+      .query(query);
+    return callback(null)
+  }
+  catch (error) { return callback(error) }
+}
 
 module.exports = {
   GetAccount: GetAccount,
@@ -116,4 +108,5 @@ module.exports = {
   GetProfili: GetProfili,
   GetEmail: GetEmail,
   Registrazione: Registrazione,
+  Prenotazione: Prenotazione,
 }

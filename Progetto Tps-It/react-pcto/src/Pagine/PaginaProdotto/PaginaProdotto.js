@@ -6,7 +6,7 @@ import Alert from '../../Componenti/Alert/Alert'
 
 class X extends React.Component {
 
-    state = { prodotto : null, ok : false, messaggio: '', tipo: '', link: '' }
+    state = { prodotto : null, ok: false, messaggio: '', tipo: '', link: '' }
 
     render(){ 
         var img; 
@@ -35,8 +35,8 @@ class X extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="container">
-                        <p style={ {fontSize: 30} } className="float-start mt-4">Prezzo: €{this.state.prodotto.Prezzo}0</p>
+                    <div className="container mb-5">
+                        <p style={ {fontSize: 30} } className="float-start mt-4">Prezzo: € {this.state.prodotto.Prezzo}0</p>
                         <a  class="btn btn-dark" role="button" onClick={ () => this.Ordina() }>ORDINA</a>
                     </div>
                     {this.alert}
@@ -49,8 +49,8 @@ class X extends React.Component {
     }
 
     componentDidMount () {
-        Axios.get("http://79.49.244.79:8090/api/Prodotto/" + this.props.x).then(
-            (risposta) => this.setState({prodotto : risposta.data, ok : true})
+        Axios.get("http://" + window.location.hostname + ":8090/api/Prodotto/" + this.props.x).then(
+            (risposta) => { if(risposta.data !== "") this.setState({prodotto : risposta.data, ok : true}) }
         )
     }
 
@@ -67,17 +67,16 @@ class X extends React.Component {
         }
 
         if(Account.Accesso){
-            this.Alert(true, "ciao", 'Accedi')
+            this.Alert(true, "ciao", 'Account')
         }
-        else{
-            this.Alert(false, "Devi fare l'accesso prima di poter fare un ordine", 'Accedi')
-        }
+        else this.Alert(false, "Devi fare l'accesso prima di poter fare un ordine", 'Accedi')
     }
 
     Alert = (ok, msg, link) => { 
         if(ok)
             this.setState( {messaggio: msg, tipo: 'S', link: link } )
-        else this.setState( {messaggio: msg, tipo: 'E', link: link } )
+        else
+            this.setState( {messaggio: msg, tipo: 'E', link: link } )
       }
 }
 

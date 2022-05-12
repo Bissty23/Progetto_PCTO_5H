@@ -15,21 +15,6 @@ router.use((request, response, next) => {
   next();
 });
 
-// router.route('/<cosa>').<funzione>((request, response) => {
-//   Db.<Metodo>().then((data) => {
-//     response.json(data[0]);
-//   })
-// })
-
-// router.route('/elencofilm/:id').get((request, response) => {
-//   Db.getFilm(request.params.id).then((data) => {
-//     response.json(data[0]);
-//   })
-// })
-
-//(ctrl + k) + (ctrl + c) per commentare la parte selezionata 
-//(ctrl + k) + (ctrl + u) per decommentare la parte selezionata 
-
 router.route('/Account/:username').get((request, response) => { 
   Db.GetAccount(request.params.username).then((data) => { 
     response.json(data[0]); 
@@ -78,17 +63,23 @@ router.route('/Classi/:letteraSede').get((request, response) => {
   }) 
 })
 
-
-
 router.route('/Registra').post((req, res)=>{
   let {Username,Password,NumeroDiTelefono,Ruolo,Email,Classe} = req.body;
     Db.Registrazione(Username,Password,NumeroDiTelefono,Ruolo,Email,Classe,(error, result)=>{
-      if(error){
-            res.status(500).send({error:error});
-      }else{
-            res.status(200).send({success:true ,result});
-      }
+      if(error)
+        res.status(500).send({error:error});
+      else
+        res.status(200).send({success:true ,result});
+    });
+})
 
+router.route('/Prenota').post((req, res)=>{
+  let {Codice,DataOraInvio,Stato,Account,SedeRitiro,DTORitiro} = req.body;
+    Db.Prenotazione(Codice,DataOraInvio,Stato,Account,SedeRitiro,DTORitiro,(error, result)=>{
+      if(error)
+        res.status(500).send({error:error});
+      else
+        res.status(200).send({success:true ,result});
     });
 })
 
