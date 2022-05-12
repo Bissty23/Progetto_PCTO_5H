@@ -9,6 +9,7 @@ import CryptoJS from 'crypto-js';
 
 
 var flag = false
+var classe = ""
 
 class Registra extends React.Component{
 
@@ -109,8 +110,6 @@ class Registra extends React.Component{
                 if($("#inStaticEmail").val().toLowerCase() == email.Email.trim().toLowerCase())
                   {
                     flag = true
-                    console.log(email.Email.trim())
-                    console.log($("#inStaticEmail").val())
                   }
               }
              })
@@ -129,7 +128,7 @@ class Registra extends React.Component{
                     this.Errore("Esiste già un account con questo username")
                     flag = false
                   }
-                  if(($("#inStaticEmail").val()).toLowerCase() == (profili.Email).toLowerCase())
+                  if(($("#inStaticEmail").val()).toLowerCase() === (profili.Email).toLowerCase().trim())
                   {
                     this.Errore("Esiste già un account associato a questa email")
                     flag = false
@@ -149,8 +148,15 @@ class Registra extends React.Component{
                     this.Errore("Per poterti registrare devi compilare tutti i campi")
                     flag = false
                   }
+                  if(($("#classi option:selected").text()).trim() == "--Classe--")
+                  {
+                    classe = ""
+                  }else{
+                    classe = ($("#classi option:selected").text()).trim()
+                  }
                   }
                 })
+                console.log(flag)
                 if(flag)
                 {
                   {
@@ -160,7 +166,7 @@ class Registra extends React.Component{
                       NumeroDiTelefono:$("#inNumeroTelefono").val(),
                       Ruolo:ruolo,
                       Email:$("#inStaticEmail").val(),
-                      Classe:($("#classi option:selected").text()).trim()
+                      Classe: classe
                     }
                     Axios.post('http://localhost:8090/api/Registra', payload)
                       .then(res => {
@@ -168,7 +174,8 @@ class Registra extends React.Component{
                           console.log(res.data);
                       }
                     )
-                    window.location.href="/"
+                    
+                    
                   }
                   console.log(payload);
                 }
