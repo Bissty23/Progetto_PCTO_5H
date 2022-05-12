@@ -88,12 +88,13 @@ async function Registrazione(Username, Password, NumeroDiTelefono, Ruolo, Email,
 async function Prenotazione(Account, Prodotto, Sede, callback = () => {}){
 
   let x = new Date()
+  let f = new Date(x.getFullYear(),x.getMonth(),x.getDate(),x.getHours(),x.getMinutes(),x.getSeconds())
 
    let account = await GetAccount(Account)
    let prodotto = await GetProdotto(Prodotto)
 
-  // let oraRitiro = null
-  // let codIntervallo = 0
+   let oraRitiro = null
+   let codIntervallo = 0
 
   // let oraCorrente = new Date().getHours()
   // let minutoCorrente = new Date().getMinutes()
@@ -106,53 +107,18 @@ async function Prenotazione(Account, Prodotto, Sede, callback = () => {}){
   //   intervalli[0].forEach(x => {
 
   //     if(oraRitiro === null){
-  //       let flag = false
-
-  //       let oraFine = parseInt(x.OraFine.toString().substring(16,18))
-  //       let oraInizio = parseInt(x.OraInizio.toString().substring(16,18))
-  //       let minutoFine = parseInt(x.OraFine.toString().substring(19,21))
-  //       let minutoInizio = parseInt(x.OraInizio.toString().substring(19,21))
-
-  //       if (oraFine > oraCorrente)
-  //         if(minutoFine <= minutoCorrente)
-  //           flag = true
-  //         else flag = false
-  //       else if (oraFine === oraCorrente)
-  //             if (minutoFine <= minutoCorrente + 10)
-  //               flag = true
-  //             else flag = false
-  //       else flag = false
-
-  //       if(flag === true)
-  //         if(oraInizio >= oraCorrente && minutoFine >= minutoCorrente)
-  //           if(minutoCorrente + 10 >= 60)
-  //             oraRitiro = (oraCorrente + 1 )+ ":" + ( minutoCorrente - 50 ) + ":" + secondoCorrente
-  //           else
-  //             oraRitiro = oraCorrente + ":" + ( minutoCorrente + 10 ) + ":" + secondoCorrente
-  //         else  if (minutoCorrente - 10 < 0)
-  //                 if(oraCorrente - 1 === oraInizio)
-  //                   if((minutoInizio + 50) - minutoCorrente < 0)
-  //                     if(minutoCorrente + 10 >= 60)
-  //                       oraRitiro = (oraCorrente + 1 ) + ":" + ( minutoCorrente - 50 ) + ":" + secondoCorrente
-  //                     else
-  //                       oraRitiro = oraCorrente + ":" + ( minutoCorrente + 10 ) + ":" + secondoCorrente
-  //                   else
-  //                     oraRitiro = oraInizio + ":" + minutoInizio + ":" + ":00"
-  //                 else if (oraCorrente - 1 < oraInizio)
-  //                   oraRitiro = oraInizio + ":" + minutoInizio + ":" + ":00"
-
+  //         if(x.OraFinale > moment(f).add(10, 'm').toDate())
+  //           oraRitiro = moment(f).add(10, 'm').toDate()
   //       codIntervallo = x.Codice
   //     }
   //   })
   // }
-  // else  if(minutoCorrente + 10 >= 60)
-  //         oraRitiro = (oraCorrente + 1 )+ ":" + (minutoCorrente - 50)+ ":" + ":00"
-  //       else
-  //         oraRitiro = oraCorrente + ":" + (minutoCorrente + 10) + ":" + ":00"
+  // else
+  //   oraRitiro = moment(f).add(10, 'm').toDate()
 
 
-  let oraRitiro = new Date(x.getFullYear(),x.getMonth(),x.getDate(),x.getHours(),x.getMinutes(),x.getSeconds())
-  let codIntervallo = 1
+   oraRitiro = new Date(x.getFullYear(),x.getMonth(),x.getDate(),x.getHours(),x.getMinutes(),x.getSeconds())
+   codIntervallo = null
 
   try{
     let connection = await sql.connect(config);
@@ -163,7 +129,7 @@ async function Prenotazione(Account, Prodotto, Sede, callback = () => {}){
     .input('Note', sql.Int, null)
     .query("INSERT INTO [dbo].[Ritiro] ([DataOraRitiro], [Sede], [IntervalloOrario], [Note]) VALUES (@DataOraRitiro, @Sede, @IntervalloOrario, @Note)");
 
-    let f =  new Date(x.getFullYear(),x.getMonth(),x.getDate(),x.getHours(),x.getMinutes(),x.getSeconds())
+    let f = new Date(x.getFullYear(),x.getMonth(),x.getDate(),x.getHours(),x.getMinutes(),x.getSeconds())
 
     try{
       risultato = await connection.request()
@@ -189,7 +155,16 @@ async function Prenotazione(Account, Prodotto, Sede, callback = () => {}){
     catch (error) { return callback(error) }
   }
   catch (error) { return callback('z') }
-  
+}
+
+async function GetPrenotazioni(username) {
+  try {
+    let pool = await sql.connect(config);
+    let prenotazioni = await pool.request().input('username', sql.NChar, username).query("SELECT * FROM Prenotazione JOIN Effettua ON Prenotazione.Codice = Effettua.Prenotazione JOIN Prodotto ON Effettua.Prodotto = Prodotto.Codice WHERE Account = @username");
+    console.log(username)
+    return prenotazioni.recordsets;
+  }
+  catch (error) { console.log(error) }
 }
 
 async function GetUltimaPrenotazione(Account){

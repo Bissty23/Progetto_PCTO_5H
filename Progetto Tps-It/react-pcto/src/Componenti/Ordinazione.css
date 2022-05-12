@@ -1,0 +1,11 @@
+#Contenitore{
+    background-color: var(--navbarcolor);
+    border-radius: 15px;
+    font-size: large;
+    color: black;
+}
+
+#scritte {
+    font-size: x-large;
+    color: darkred;
+}

@@ -63,6 +63,12 @@ router.route('/Classi/:letteraSede').get((request, response) => {
   }) 
 })
 
+router.route('/Prenotazioni/:username').get((request, response) => { 
+  Db.GetPrenotazioni(request.params.username).then((data) => { 
+    response.json(data); 
+  }) 
+})
+
 router.route('/Registra').post((req, res)=>{
   let {Username,Password,NumeroDiTelefono,Ruolo,Email,Classe} = req.body;
     Db.Registrazione(Username,Password,NumeroDiTelefono,Ruolo,Email,Classe,(error, result)=>{

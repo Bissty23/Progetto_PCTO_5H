@@ -17,7 +17,7 @@ class Accedi extends React.Component {
         {this.alert}
         <div className="container input-form">  
           <div className="input-group mb-3">
-            <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username o Email" id="InUsername"/>   
+            <input onKeyPress={ (event) => {if (event.key === 'Enter') $("#InPassword").focus()} } type="text" className="form-control" placeholder="Username" id="InUsername"/>   
           </div>
           <div className="input-group mb-3">
             <input onKeyPress={ (event) => {if (event.key === 'Enter') this.GetAccount()} } type="password" className="form-control" placeholder="password" id="InPassword"/>   
