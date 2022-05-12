@@ -36,7 +36,7 @@ class Accedi extends React.Component {
 
     if(username !== '')
       if(password !== '')
-        Axios.get("http://localhost:8090/api/Account/" + username).then(
+        Axios.get("http://" + window.location.hostname + ":8090/api/Account/" + username).then(
           (risposta) => {
             if(risposta.data[0] !== undefined)
               if(CryptoJS.SHA3(password).toString() === risposta.data[0].Password.toString()){
@@ -48,7 +48,7 @@ class Accedi extends React.Component {
                 localStorage.setItem('email', risposta.data[0].Email)
                 localStorage.setItem('Sede', risposta.data[0].Sede)
 
-                window.location.href = '/'; 
+                window.location.href = "/"
               } else this.Errore("Errore: Password errata")
             else this.Errore("Errore: Username o Email inserite sono incorrette")
           },

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Img from './trasferimento.png'
+import Img from './tramezzino.png'
 
 
 class Errore extends React.Component {
