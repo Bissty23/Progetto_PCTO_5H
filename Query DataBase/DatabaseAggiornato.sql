@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [PCTO]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Database [PCTO]    Script Date: 12/05/2022 08:49:20 ******/
 CREATE DATABASE [PCTO]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [PCTO] SET QUERY_STORE = OFF
 GO
 USE [PCTO]
 GO
-/****** Object:  Table [dbo].[Abilitazione]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Abilitazione]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +95,7 @@ CREATE TABLE [dbo].[Abilitazione](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Account]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Account]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -103,7 +103,7 @@ GO
 CREATE TABLE [dbo].[Account](
 	[Username] [nchar](30) NOT NULL,
 	[Password] [nchar](128) NOT NULL,
-	[NumeroDiTelefono] [int] NOT NULL,
+	[NumeroDiTelefono] [real] NOT NULL,
 	[Ruolo] [nchar](20) NULL,
 	[Email] [nchar](50) NULL,
 	[Classe] [nchar](2) NULL,
@@ -113,7 +113,7 @@ CREATE TABLE [dbo].[Account](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +131,7 @@ CREATE TABLE [dbo].[Cliente](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CompostoDa]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[CompostoDa]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -146,7 +146,7 @@ CREATE TABLE [dbo].[CompostoDa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Effettua]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Effettua]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,7 +161,7 @@ CREATE TABLE [dbo].[Effettua](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Giacenza]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Giacenza]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,7 +181,7 @@ CREATE TABLE [dbo].[Giacenza](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ListaUtentiScolastici]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[ListaUtentiScolastici]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,7 +198,7 @@ CREATE TABLE [dbo].[ListaUtentiScolastici](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Menu]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Menu]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +216,7 @@ CREATE TABLE [dbo].[Menu](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Prenotazione]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Prenotazione]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -234,13 +234,13 @@ CREATE TABLE [dbo].[Prenotazione](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Prodotto]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Prodotto]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Prodotto](
-	[Codce] [int] NOT NULL,
+	[Codice] [int] NOT NULL,
 	[Nome] [nchar](40) NOT NULL,
 	[Descrizione] [nchar](250) NULL,
 	[Note] [nchar](50) NULL,
@@ -248,11 +248,11 @@ CREATE TABLE [dbo].[Prodotto](
 	[TipologiaProdotto] [int] NOT NULL,
  CONSTRAINT [PK_Prodotto] PRIMARY KEY CLUSTERED 
 (
-	[Codce] ASC
+	[Codice] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Registrazione]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Registrazione]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -267,7 +267,7 @@ CREATE TABLE [dbo].[Registrazione](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Ritiro]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Ritiro]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -284,7 +284,7 @@ CREATE TABLE [dbo].[Ritiro](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Sede]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[Sede]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -302,7 +302,7 @@ CREATE TABLE [dbo].[Sede](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TipologiaProdotto]    Script Date: 11/05/2022 19:41:35 ******/
+/****** Object:  Table [dbo].[TipologiaProdotto]    Script Date: 12/05/2022 08:49:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -317,7 +317,11 @@ CREATE TABLE [dbo].[TipologiaProdotto](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+INSERT [dbo].[Account] ([Username], [Password], [NumeroDiTelefono], [Ruolo], [Email], [Classe]) VALUES (N'adolfino                      ', N'69729dab29a811cf0389a1ba2a430bc3dd2f35566b70207e7521171ff8bb402af3e7ff78778d0db2c0712d90802aae5bd7c6b921cbb356736c225a5b2ba224bd', 3.34985523E+09, N'S                   ', N'riccardo.schillaci.stud@ispascalcomandini.it      ', N'5H')
+GO
 INSERT [dbo].[Account] ([Username], [Password], [NumeroDiTelefono], [Ruolo], [Email], [Classe]) VALUES (N'BlueberryPie                  ', N'45a227d9cc92151e0fd91ed8b91607ea25ed80c205b856717c53288925904f796ec73d832f8515c69e361d72b2c44e6cf2c5525c9dd8dca1c47672d472254273', 33, N'Easter-Egg          ', N'Elisa.bald@gmail.com                              ', NULL)
+GO
+INSERT [dbo].[Account] ([Username], [Password], [NumeroDiTelefono], [Ruolo], [Email], [Classe]) VALUES (N'paramèntalox                  ', N'69729dab29a811cf0389a1ba2a430bc3dd2f35566b70207e7521171ff8bb402af3e7ff78778d0db2c0712d90802aae5bd7c6b921cbb356736c225a5b2ba224bd', 3.34985523E+09, N'S                   ', N'lorenzo.fabbri.stud@ispascalcomandini.it          ', N'5H')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'abd el hadi                                       ', N'fajraoui                                          ', N'abdelhadi.fajraoui.stud@ispascalcomandini.it                                                        ', N'2M-C', N'S')
 GO
@@ -359,7 +363,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'adele                                             ', N'civinelli                                         ', N'adele.civinelli.stud@ispascalcomandini.it                                                           ', N'4M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'adolfo                                            ', N'turco                                             ', N'adolfo.turco@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'adolfo                                            ', N'turco                                             ', N'adolfo.turco@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'adrian                                            ', N'adames abreu                                      ', N'adrian.adamesabreu.stud@ispascalcomandini.it                                                        ', N'3A-C', N'S')
 GO
@@ -393,7 +397,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alan davide                                       ', N'bovo                                              ', N'alandavide.bovo.stud@ispascalcomandini.it                                                           ', N'1H-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alarico                                           ', N'barbagallo                                        ', N'alarico.barbagallo@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alarico                                           ', N'barbagallo                                        ', N'alarico.barbagallo@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alberto                                           ', N'febbraio                                          ', N'alberto.febbraio.stud@ispascalcomandini.it                                                          ', N'4L-P', N'S')
 GO
@@ -403,7 +407,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alberto                                           ', N'scirpoli                                          ', N'alberto.scirpoli.stud@ispascalcomandini.it                                                          ', N'3A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alberto                                           ', N'tonelli                                           ', N'alberto.tonelli@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alberto                                           ', N'tonelli                                           ', N'alberto.tonelli@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vincenzi                                          ', N'alberto                                           ', N'alberto.vincenzi.stud@ispascalcomandini.it                                                          ', N'3E-P', N'S')
 GO
@@ -421,7 +425,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alessandra                                        ', N'migliori                                          ', N'alessandra.migliori@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alessandra                                        ', N'volta                                             ', N'alessandra.volta@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alessandra                                        ', N'volta                                             ', N'alessandra.volta@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'alessandro                                        ', N'allegra                                           ', N'alessandro.allegra.stud@ispascalcomandini.it                                                        ', N'2A-P', N'S')
 GO
@@ -719,7 +723,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stacchini                                         ', N'andrea                                            ', N'andrea.stacchini.stud@ispascalcomandini.it                                                          ', N'2A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Andrea                                            ', N'Vaccari                                           ', N'andrea.vaccari@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Andrea                                            ', N'Vaccari                                           ', N'andrea.vaccari@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'andrea                                            ', N'valbonesi                                         ', N'andrea.valbonesi.stud@ispascalcomandini.it                                                          ', N'2G-C', N'S')
 GO
@@ -741,7 +745,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'astorri                                           ', N'annalisa                                          ', N'annalisa.astorri.stud@ispascalcomandini.it                                                          ', N'3I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'annalisa                                          ', N'baraghini                                         ', N'annalisa.baraghini@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'annalisa                                          ', N'baraghini                                         ', N'annalisa.baraghini@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'annamaria                                         ', N'faberi                                            ', N'annamaria.faberi@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
@@ -749,7 +753,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'anton                                             ', N'abramov                                           ', N'anton.abramov.stud@ispascalcomandini.it                                                             ', N'4G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonella                                         ', N'bisacchi                                          ', N'antonella.bisacchi@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonella                                         ', N'bisacchi                                          ', N'antonella.bisacchi@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonella                                         ', N'messina                                           ', N'antonella.messina@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
@@ -763,7 +767,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonio                                           ', N'ciaburri                                          ', N'antonio.ciaburri.stud@ispascalcomandini.it                                                          ', N'2E-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonio                                           ', N'danesi                                            ', N'antonio.danesi@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonio                                           ', N'danesi                                            ', N'antonio.danesi@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'antonio                                           ', N'de rosa                                           ', N'antonio.derosa.stud@ispascalcomandini.it                                                            ', N'2H-P', N'S')
 GO
@@ -787,7 +791,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'bedei                                             ', N'arianna                                           ', N'arianna.bedei.stud@ispascalcomandini.it                                                             ', N'3E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'arianna                                           ', N'lucchi                                            ', N'arianna.lucchi@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'arianna                                           ', N'lucchi                                            ', N'arianna.lucchi@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'arnis                                             ', N'hamiti                                            ', N'arnis.hamiti.stud@ispascalcomandini.it                                                              ', N'1B-C', N'S')
 GO
@@ -813,9 +817,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'azzurra                                           ', N'chincarini                                        ', N'azzurra.chincarini.stud@ispascalcomandini.it                                                        ', N'1M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'barbara                                           ', N'baronio                                           ', N'barbara.baronio@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'barbara                                           ', N'baronio                                           ', N'barbara.baronio@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'barbara                                           ', N'benini                                            ', N'barbara.benini@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'barbara                                           ', N'benini                                            ', N'barbara.benini@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'barbara                                           ', N'caccavale                                         ', N'barbara.caccavale.stud@ispascalcomandini.it                                                         ', N'2A-C', N'S')
 GO
@@ -853,29 +857,29 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'brian                                             ', N'magnani                                           ', N'brian.magnani.stud@ispascalcomandini.it                                                             ', N'2F-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'brunella                                          ', N'tombetti                                          ', N'brunella.tombetti@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'brunella                                          ', N'tombetti                                          ', N'brunella.tombetti@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'bryan                                             ', N'sacchini                                          ', N'bryan.sacchini.stud@ispascalcomandini.it                                                            ', N'1A-C', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'bryce                                             ', N'panara                                            ', N'bryce.panara.stud@ispascalcomandini.it                                                              ', N'4B-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carlo                                             ', N'biondi                                            ', N'carlo.biondi@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carlo                                             ', N'biondi                                            ', N'carlo.biondi@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carlos.sebastian                                  ', N'soto.castaneda                                    ', N'carlossebastian.sotocastaneda.stud@ispascalcomandini.it                                             ', N'4I-P', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carlotta                                          ', N'stecchini                                         ', N'carlotta.stecchini.stud@ispascalcomandini.it                                                        ', N'2M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carmelo                                           ', N'crasci                                            ', N'carmelo.crasci@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carmelo                                           ', N'crasci                                            ', N'carmelo.crasci@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carmine                                           ', N'cerrato                                           ', N'carmine.cerrato@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carmine                                           ', N'primitivi                                         ', N'carmine.primitivi.stud@ispascalcomandini.it                                                         ', N'3B-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carolina                                          ', N'bertozzi                                          ', N'carolina.bertozzi@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carolina                                          ', N'bertozzi                                          ', N'carolina.bertozzi@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'carol luca                                        ', N'nicolae                                           ', N'carolluca.nicolae.stud@ispascalcomandini.it                                                         ', N'3A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'catia                                             ', N'mingozzi                                          ', N'catia.mingozzi@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'catia                                             ', N'mingozzi                                          ', N'catia.mingozzi@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'cesare                                            ', N'furia                                             ', N'cesare.furia.stud@ispascalcomandini.it                                                              ', N'4B-C', N'S')
 GO
@@ -891,11 +895,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'chiara                                            ', N'bernacci                                          ', N'chiara.bernacci.stud@ispascalcomandini.it                                                           ', N'1M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'chiara                                            ', N'ferrari                                           ', N'chiara.ferrari@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'chiara                                            ', N'ferrari                                           ', N'chiara.ferrari@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Chiara                                            ', N'Fusaroli                                          ', N'chiara.fusaroli@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Chiara                                            ', N'Fusaroli                                          ', N'chiara.fusaroli@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'chiara                                            ', N'mazza                                             ', N'chiara.mazza@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'chiara                                            ', N'mazza                                             ', N'chiara.mazza@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'christian                                         ', N'bagnolini                                         ', N'christian.bagnolini.stud@ispascalcomandini.it                                                       ', N'5G-C', N'S')
 GO
@@ -919,13 +923,13 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'christian wichita                                 ', N'forti                                             ', N'christianwichita.forti.stud@ispascalcomandini.it                                                    ', N'2C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'cinzia                                            ', N'lumini                                            ', N'cinzia.lumini@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'cinzia                                            ', N'lumini                                            ', N'cinzia.lumini@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ciprian.mihai                                     ', N'spinu                                             ', N'ciprianmihai.spinu.stud@ispascalcomandini.it                                                        ', N'5H-P', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'clarissa                                          ', N'bala                                              ', N'clarissa.bala.stud@ispascalcomandini.it                                                             ', N'1E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'claudia                                           ', N'placuzzi                                          ', N'claudia.placuzzi@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'claudia                                           ', N'placuzzi                                          ', N'claudia.placuzzi@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'claudia ivanova                                   ', N'ivanova                                           ', N'claudiaivanova.ivanova.stud@ispascalcomandini.it                                                    ', N'3M-C', N'S')
 GO
@@ -975,7 +979,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'daniele                                           ', N'marchese                                          ', N'daniele.marchese.stud@ispascalcomandini.it                                                          ', N'3B-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'daniele                                           ', N'pacchioni                                         ', N'daniele.pacchioni@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'daniele                                           ', N'pacchioni                                         ', N'daniele.pacchioni@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'daniele                                           ', N'pieri                                             ', N'daniele.pieri.stud@ispascalcomandini.it                                                             ', N'2E-P', N'S')
 GO
@@ -995,7 +999,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'darshpreet singh                                  ', N'saini                                             ', N'darshpreetsingh.saini.stud@ispascalcomandini.it                                                     ', N'1A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'david                                             ', N'veneti                                            ', N'david.veneti@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'david                                             ', N'veneti                                            ', N'david.veneti@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'davide                                            ', N'andreotti                                         ', N'davide.andreotti.stud@ispascalcomandini.it                                                          ', N'5D-P', N'S')
 GO
@@ -1107,7 +1111,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'dilson                                            ', N'lusha                                             ', N'dilson.lusha.stud@ispascalcomandini.it                                                              ', N'1A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Francesco                                         ', N'Postiglione                                       ', N'dirigenza@ispascalcomandini.it                                                                      ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Francesco                                         ', N'Postiglione                                       ', N'dirigenza@ispascalcomandini.it                                                                      ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'domenico                                          ', N'di maggio                                         ', N'domenico.dimaggio.stud@ispascalcomandini.it                                                         ', N'2B-P', N'S')
 GO
@@ -1149,17 +1153,17 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'eleas                                             ', N'zahir                                             ', N'eleas.zahir.stud@ispascalcomandini.it                                                               ', N'3A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Elena                                             ', N'Brandolini                                        ', N'elena.brandolini@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Elena                                             ', N'Brandolini                                        ', N'elena.brandolini@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elena                                             ', N'casadei                                           ', N'elena.casadei@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elena                                             ', N'casadei                                           ', N'elena.casadei@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elena                                             ', N'pasini                                            ', N'elena.pasini.stud@ispascalcomandini.it                                                              ', N'4D-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elena                                             ', N'piraccini                                         ', N'elena.piraccini@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elena                                             ', N'piraccini                                         ', N'elena.piraccini@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elena                                             ', N'zavoli                                            ', N'elena.zavoli.stud@ispascalcomandini.it                                                              ', N'1F-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Eleonora                                          ', N'Gagliardi                                         ', N'eleonora.gagliardi@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Eleonora                                          ', N'Gagliardi                                         ', N'eleonora.gagliardi@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elia                                              ', N'antoniacci                                        ', N'elia.antoniacci.stud@ispascalcomandini.it                                                           ', N'3A-C', N'S')
 GO
@@ -1183,11 +1187,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'zanotti                                           ', N'elia                                              ', N'elia.zanotti.stud@ispascalcomandini.it                                                              ', N'3G-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elisa                                             ', N'forti                                             ', N'elisa.forti@ispascalcomandini.it                                                                    ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elisa                                             ', N'forti                                             ', N'elisa.forti@ispascalcomandini.it                                                                    ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elisa                                             ', N'mengozzi                                          ', N'elisa.mengozzi.stud@ispascalcomandini.it                                                            ', N'1M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elisa                                             ', N'venturi                                           ', N'elisa.venturi@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elisa                                             ', N'venturi                                           ', N'elisa.venturi@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'elsi                                              ', N'pepa                                              ', N'elsi.pepa.stud@ispascalcomandini.it                                                                 ', N'2E-C', N'S')
 GO
@@ -1211,7 +1215,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nuti                                              ', N'emanuele                                          ', N'emanuele.nuti.stud@ispascalcomandini.it                                                             ', N'3H-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'emanuele                                          ', N'parini                                            ', N'emanuele.parini@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'emanuele                                          ', N'parini                                            ', N'emanuele.parini@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'emanuele                                          ', N'passaro                                           ', N'emanuele.passaro.stud@ispascalcomandini.it                                                          ', N'2A-C', N'S')
 GO
@@ -1265,7 +1269,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'enrico                                            ', N'sartini                                           ', N'enrico.sartini.stud@ispascalcomandini.it                                                            ', N'2A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'enrico                                            ', N'valenti                                           ', N'enrico.valenti@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'enrico                                            ', N'valenti                                           ', N'enrico.valenti@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'enrico                                            ', N'ventrucci                                         ', N'enrico.ventrucci.stud@ispascalcomandini.it                                                          ', N'2E-P', N'S')
 GO
@@ -1283,9 +1287,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'erin                                              ', N'francesconi                                       ', N'erin.francesconi.stud@ispascalcomandini.it                                                          ', N'5B-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'erminia                                           ', N'alecci                                            ', N'erminia.alecci@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'erminia                                           ', N'alecci                                            ', N'erminia.alecci@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'erminia                                           ', N'sica                                              ', N'erminia.sica@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'erminia                                           ', N'sica                                              ', N'erminia.sica@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'eros                                              ', N'soldati                                           ', N'eros.soldati.stud@ispascalcomandini.it                                                              ', N'1F-P', N'S')
 GO
@@ -1339,11 +1343,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'favour.osaretin                                   ', N'emuwahen                                          ', N'favourosaretin.emuwahen.stud@ispascalcomandini.it                                                   ', N'3E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Federica                                          ', N'Fabbri                                            ', N'federica.fabbri@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Federica                                          ', N'Fabbri                                            ', N'federica.fabbri@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federica                                          ', N'mallozzi                                          ', N'federica.mallozzi.stud@ispascalcomandini.it                                                         ', N'1L-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federica                                          ', N'montanari                                         ', N'federica.montanari@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federica                                          ', N'montanari                                         ', N'federica.montanari@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federica                                          ', N'pieri                                             ', N'federica.pieri@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
@@ -1377,7 +1381,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federico                                          ', N'minguzzi                                          ', N'federico.minguzzi.stud@ispascalcomandini.it                                                         ', N'2G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federico                                          ', N'molara                                            ', N'federico.molara@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federico                                          ', N'molara                                            ', N'federico.molara@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'monti                                             ', N'federico                                          ', N'federico.monti.stud@ispascalcomandini.it                                                            ', N'3G-P', N'S')
 GO
@@ -1397,7 +1401,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'rossi                                             ', N'federico                                          ', N'federico.rossi.stud@ispascalcomandini.it                                                            ', N'2A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federico                                          ', N'teodorani                                         ', N'federico.teodorani@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'federico                                          ', N'teodorani                                         ', N'federico.teodorani@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'filippo                                           ', N'alvisi                                            ', N'filippo.alvisi1.stud@ispascalcomandini.it                                                           ', N'2E-P', N'S')
 GO
@@ -1453,7 +1457,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'filippo                                           ', N'spignoli                                          ', N'filippo.spignoli.stud@ispascalcomandini.it                                                          ', N'3A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'filippo                                           ', N'spirito                                           ', N'filippo.spirito@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'filippo                                           ', N'spirito                                           ', N'filippo.spirito@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'filippo                                           ', N'tappi                                             ', N'filippo.tappi.stud@ispascalcomandini.it                                                             ', N'4C-P', N'S')
 GO
@@ -1469,7 +1473,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'fortunata                                         ', N'macri''                                            ', N'fortunata.macri@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesca                                         ', N'piraccini                                         ', N'francesca.piraccini@ispascalcomandini.it                                                            ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesca                                         ', N'piraccini                                         ', N'francesca.piraccini@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesca                                         ', N'righi                                             ', N'francesca.righi.stud@ispascalcomandini.it                                                           ', N'1A-P', N'S')
 GO
@@ -1497,11 +1501,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'dell''emilia                                       ', N'francesco.dellemilia.stud@ispascalcomandini.it                                                      ', N'4C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'fabbretti                                         ', N'francesco.fabbretti@ispascalcomandini.it                                                            ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'fabbretti                                         ', N'francesco.fabbretti@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'fantini                                           ', N'francesco.fantini.stud@ispascalcomandini.it                                                         ', N'4B-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'filomena                                          ', N'francesco.filomena@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'filomena                                          ', N'francesco.filomena@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'floram                                            ', N'francesco.floram.stud@ispascalcomandini.it                                                          ', N'5E-C', N'S')
 GO
@@ -1555,13 +1559,13 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'suzzi                                             ', N'francesco.suzzi.stud@ispascalcomandini.it                                                           ', N'1H-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Francesco                                         ', N'Tappi                                             ', N'francesco.tappi@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Francesco                                         ', N'Tappi                                             ', N'francesco.tappi@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'tisselli                                          ', N'francesco.tisselli.stud@ispascalcomandini.it                                                        ', N'2H-P', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'tonelli                                           ', N'francesco.tonelli.stud@ispascalcomandini.it                                                         ', N'5G-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'venturi                                           ', N'francesco.venturi@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'venturi                                           ', N'francesco.venturi@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'francesco                                         ', N'venzi                                             ', N'francesco.venzi.stud@ispascalcomandini.it                                                           ', N'1B-P', N'S')
 GO
@@ -1583,7 +1587,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriele                                          ', N'boschi                                            ', N'gabriele.boschi.stud@ispascalcomandini.it                                                           ', N'4A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriele                                          ', N'monti                                             ', N'gabriele.monti@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriele                                          ', N'monti                                             ', N'gabriele.monti@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriele                                          ', N'rinaldi                                           ', N'gabriele.rinaldi.stud@ispascalcomandini.it                                                          ', N'1G-P', N'S')
 GO
@@ -1597,7 +1601,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriele                                          ', N'vincenzi                                          ', N'gabriele.vincenzi.stud@ispascalcomandini.it                                                         ', N'4G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriella                                         ', N'benedettini                                       ', N'gabriella.benedettini@ispascalcomandini.it                                                          ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriella                                         ', N'benedettini                                       ', N'gabriella.benedettini@ispascalcomandini.it                                                          ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gabriel nicolo''                                   ', N'maraldi                                           ', N'gabrielnicolo.maraldi.stud@ispascalcomandini.it                                                     ', N'4L-P', N'S')
 GO
@@ -1615,7 +1619,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gherghina vasileva                                ', N'ivanova                                           ', N'gherghinavasileva.ivanova.stud@ispascalcomandini.it                                                 ', N'2M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'bortoluzzi                                        ', N'giacomo.bortoluzzi@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'bortoluzzi                                        ', N'giacomo.bortoluzzi@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'boschi                                            ', N'giacomo.boschi.stud@ispascalcomandini.it                                                            ', N'5E-P', N'S')
 GO
@@ -1663,9 +1667,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'stanghellini                                      ', N'giacomo.stanghellini.stud@ispascalcomandini.it                                                      ', N'1B-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'tagarelli                                         ', N'giacomo.tagarelli@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'tagarelli                                         ', N'giacomo.tagarelli@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'torelli                                           ', N'giacomo.torelli@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'torelli                                           ', N'giacomo.torelli@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giacomo                                           ', N'venturi                                           ', N'giacomo.venturi.stud@ispascalcomandini.it                                                           ', N'3G-C', N'S')
 GO
@@ -1683,7 +1687,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giada                                             ', N'gondolini                                         ', N'giada.gondolini.stud@ispascalcomandini.it                                                           ', N'1A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giampiero                                         ', N'giorgini                                          ', N'giampiero.giorgini@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giampiero                                         ', N'giorgini                                          ', N'giampiero.giorgini@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gianluca                                          ', N'delorenzi                                         ', N'gianluca.delorenzi.stud@ispascalcomandini.it                                                        ', N'1C-P', N'S')
 GO
@@ -1741,7 +1745,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giovanni                                          ', N'montalti                                          ', N'giovanni.montalti.stud@ispascalcomandini.it                                                         ', N'3C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giovanni                                          ', N'montalti                                          ', N'giovanni.montalti@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giovanni                                          ', N'montalti                                          ', N'giovanni.montalti@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giovanni                                          ', N'perrucci                                          ', N'giovanni.perrucci.stud@ispascalcomandini.it                                                         ', N'4B-C', N'S')
 GO
@@ -1763,7 +1767,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giulia                                            ', N'mosconi                                           ', N'giulia.mosconi.stud@ispascalcomandini.it                                                            ', N'2M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giuliana                                          ', N'sirotti                                           ', N'giuliana.sirotti@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'giuliana                                          ', N'sirotti                                           ', N'giuliana.sirotti@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'manzi                                             ', N'giuliano                                          ', N'giuliano.manzi.stud@ispascalcomandini.it                                                            ', N'3I-P', N'S')
 GO
@@ -1785,17 +1789,17 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gloria angelica                                   ', N'gullotta                                          ', N'gloriaangelica.gullotta.stud@ispascalcomandini.it                                                   ', N'2M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'grazia                                            ', N'guadagno                                          ', N'grazia.guadagno@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'grazia                                            ', N'guadagno                                          ', N'grazia.guadagno@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'grazia                                            ', N'silvestri                                         ', N'grazia.silvestri@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'graziano luigi                                    ', N'la porta                                          ', N'grazianoluigi.laporta.stud@ispascalcomandini.it                                                     ', N'5G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'graziella                                         ', N'ferraro                                           ', N'graziella.ferraro@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'graziella                                         ', N'ferraro                                           ', N'graziella.ferraro@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'graziella                                         ', N'serra                                             ', N'graziella.serra@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'graziella                                         ', N'succi                                             ', N'graziella.succi@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'graziella                                         ', N'succi                                             ', N'graziella.succi@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'gregorio                                          ', N'garavini                                          ', N'gregorio.garavini.stud@ispascalcomandini.it                                                         ', N'1I-P', N'S')
 GO
@@ -1841,11 +1845,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'igor                                              ', N'zanotti                                           ', N'igor.zanotti.stud@ispascalcomandini.it                                                              ', N'4B-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ilaria                                            ', N'ciccarelli                                        ', N'ilaria.ciccarelli@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ilaria                                            ', N'ciccarelli                                        ', N'ilaria.ciccarelli@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ilaria                                            ', N'fabbri                                            ', N'ilaria.fabbri.stud@ispascalcomandini.it                                                             ', N'3B-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ilary                                             ', N'ragazzo                                           ', N'ilary.ragazzo@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ilary                                             ', N'ragazzo                                           ', N'ilary.ragazzo@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ilenia                                            ', N'buono                                             ', N'ilenia.buono.stud@ispascalcomandini.it                                                              ', N'2M-C', N'S')
 GO
@@ -1883,7 +1887,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'jacopo                                            ', N'collesi                                           ', N'jacopo.collesi.stud@ispascalcomandini.it                                                            ', N'3C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'jacopo                                            ', N'dall’ara                                          ', N'jacopo.dallara@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'jacopo                                            ', N'dall’ara                                          ', N'jacopo.dallara@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'foschi                                            ', N'jacopo                                            ', N'jacopo.foschi.stud@ispascalcomandini.it                                                             ', N'3H-P', N'S')
 GO
@@ -1989,7 +1993,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'laura                                             ', N'bartolini                                         ', N'laura.bartolini.stud@ispascalcomandini.it                                                           ', N'2A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'laura                                             ', N'vendraminetto                                     ', N'laura.vendraminetto@ispascalcomandini.it                                                            ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'laura                                             ', N'vendraminetto                                     ', N'laura.vendraminetto@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'ledion                                            ', N'rama                                              ', N'ledion.rama.stud@ispascalcomandini.it                                                               ', N'1G-P', N'S')
 GO
@@ -2003,7 +2007,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'leonardo                                          ', N'canali                                            ', N'leonardo.canali.stud@ispascalcomandini.it                                                           ', N'4I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'leonardo                                          ', N'canducci                                          ', N'leonardo.canducci@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'leonardo                                          ', N'canducci                                          ', N'leonardo.canducci@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'leonardo                                          ', N'caniato                                           ', N'leonardo.caniato.stud@ispascalcomandini.it                                                          ', N'4B-P', N'S')
 GO
@@ -2095,7 +2099,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'ferri                                             ', N'lorenzo.ferri.stud@ispascalcomandini.it                                                             ', N'4L-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'foschi                                            ', N'lorenzo.foschi@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'foschi                                            ', N'lorenzo.foschi@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'francia                                           ', N'lorenzo.francia.stud@ispascalcomandini.it                                                           ', N'1A-C', N'S')
 GO
@@ -2123,7 +2127,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'marconi                                           ', N'lorenzo.marconi.stud@ispascalcomandini.it                                                           ', N'2A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'melagranati                                       ', N'lorenzo.melagranati@ispascalcomandini.it                                                            ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'melagranati                                       ', N'lorenzo.melagranati@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'montanari                                         ', N'lorenzo.montanari.stud@ispascalcomandini.it                                                         ', N'5B-C', N'S')
 GO
@@ -2159,13 +2163,13 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'zamponi                                           ', N'lorenzo.zamponi.stud@ispascalcomandini.it                                                           ', N'2I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'zoffoli                                           ', N'lorenzo.zoffoli@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'zoffoli                                           ', N'lorenzo.zoffoli@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'lorenzo                                           ', N'zuttion                                           ', N'lorenzo.zuttion.stud@ispascalcomandini.it                                                           ', N'5G-P', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'morano                                            ', N'lorenzo damiano                                   ', N'lorenzodamiano.morano.stud@ispascalcomandini.it                                                     ', N'2E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'loris                                             ', N'battistini                                        ', N'loris.battistini@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'loris                                             ', N'battistini                                        ', N'loris.battistini@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'loris                                             ', N'montiguarnieri                                    ', N'loris.montiguarnieri.stud@ispascalcomandini.it                                                      ', N'1H-P', N'S')
 GO
@@ -2353,7 +2357,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marcello                                          ', N'belli                                             ', N'marcello.belli.stud@ispascalcomandini.it                                                            ', N'2E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Marcello                                          ', N'Cruciano                                          ', N'marcello.cruciano@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'Marcello                                          ', N'Cruciano                                          ', N'marcello.cruciano@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marcello                                          ', N'cucchi                                            ', N'marcello.cucchi.stud@ispascalcomandini.it                                                           ', N'5E-P', N'S')
 GO
@@ -2405,7 +2409,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marco                                             ', N'montalti                                          ', N'marco.montalti.stud@ispascalcomandini.it                                                            ', N'3C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marco                                             ', N'morri                                             ', N'marco.morri@ispascalcomandini.it                                                                    ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marco                                             ', N'morri                                             ', N'marco.morri@ispascalcomandini.it                                                                    ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marco                                             ', N'sampaoli                                          ', N'marco.sampaoli.stud@ispascalcomandini.it                                                            ', N'5C-P', N'S')
 GO
@@ -2425,15 +2429,15 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'margherita                                        ', N'd''altri                                           ', N'margherita.daltri.stud@ispascalcomandini.it                                                         ', N'2A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria                                             ', N'agostini                                          ', N'maria.agostini@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria                                             ', N'agostini                                          ', N'maria.agostini@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria                                             ', N'rossi                                             ', N'maria.rossi.stud@ispascalcomandini.it                                                               ', N'1I-P', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria antonietta                                  ', N'russo                                             ', N'mariaantonietta.russo@ispascalcomandini.it                                                          ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria flora                                       ', N'spatola                                           ', N'mariaflora.spatola@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria flora                                       ', N'spatola                                           ', N'mariaflora.spatola@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mariagrazia                                       ', N'gardelli                                          ', N'mariagrazia.gardelli@ispascalcomandini.it                                                           ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mariagrazia                                       ', N'gardelli                                          ', N'mariagrazia.gardelli@ispascalcomandini.it                                                           ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maria jose                                        ', N'arevalo garcia                                    ', N'mariajose.arevalogarcia.stud@ispascalcomandini.it                                                   ', N'3M-C', N'S')
 GO
@@ -2447,11 +2451,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mariem                                            ', N'riahi                                             ', N'mariem.riahi.stud@ispascalcomandini.it                                                              ', N'3M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marilena                                          ', N'parente                                           ', N'marilena.parente@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'marilena                                          ', N'parente                                           ', N'marilena.parente@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mario                                             ', N'de cola                                           ', N'mario.decola.stud@ispascalcomandini.it                                                              ', N'4D-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mario                                             ', N'donatelli                                         ', N'mario.donatelli@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mario                                             ', N'donatelli                                         ', N'mario.donatelli@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mario                                             ', N'zammarchi                                         ', N'mario.zammarchi.stud@ispascalcomandini.it                                                           ', N'3B-C', N'S')
 GO
@@ -2491,7 +2495,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'massimo                                           ', N'montalti                                          ', N'massimo.montalti.stud@ispascalcomandini.it                                                          ', N'1B-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'massimo                                           ', N'nicolai                                           ', N'massimo.nicolai@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'massimo                                           ', N'nicolai                                           ', N'massimo.nicolai@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'massimo                                           ', N'sabadini                                          ', N'massimo.sabadini@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
@@ -2559,7 +2563,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'grotti                                            ', N'matteo.grotti.stud@ispascalcomandini.it                                                             ', N'4I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'lucchi                                            ', N'matteo.lucchi@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'lucchi                                            ', N'matteo.lucchi@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'luongo                                            ', N'matteo                                            ', N'matteo.luongo.stud@ispascalcomandini.it                                                             ', N'3E-C', N'S')
 GO
@@ -2577,7 +2581,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'muratori                                          ', N'matteo.muratori1.stud@ispascalcomandini.it                                                          ', N'3G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'pagliarani                                        ', N'matteo.pagliarani@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'pagliarani                                        ', N'matteo.pagliarani@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'matteo                                            ', N'pio                                               ', N'matteo.pio.stud@ispascalcomandini.it                                                                ', N'1E-P', N'S')
 GO
@@ -2685,7 +2689,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maurizio                                          ', N'brighi                                            ', N'maurizio.brighi@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maurizio                                          ', N'sintuzzi                                          ', N'maurizio.sintuzzi@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maurizio                                          ', N'sintuzzi                                          ', N'maurizio.sintuzzi@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'maya                                              ', N'angelini                                          ', N'maya.angelini.stud@ispascalcomandini.it                                                             ', N'3B-P', N'S')
 GO
@@ -2749,7 +2753,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'michele                                           ', N'stoppa                                            ', N'michele.stoppa.stud@ispascalcomandini.it                                                            ', N'3E-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'michele                                           ', N'valdinosi                                         ', N'michele.valdinosi@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'michele                                           ', N'valdinosi                                         ', N'michele.valdinosi@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'michele                                           ', N'vangone                                           ', N'michele.vangone.stud@ispascalcomandini.it                                                           ', N'3G-C', N'S')
 GO
@@ -2763,7 +2767,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mirco                                             ', N'roverelli                                         ', N'mirco.roverelli.stud@ispascalcomandini.it                                                           ', N'1C-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'miria                                             ', N'pracucci                                          ', N'miria.pracucci@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'miria                                             ', N'pracucci                                          ', N'miria.pracucci@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'miriam                                            ', N'briganti                                          ', N'miriam.briganti.stud@ispascalcomandini.it                                                           ', N'4M-C', N'S')
 GO
@@ -2797,13 +2801,13 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'monica                                            ', N'd’auria                                           ', N'monica.dauria@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'monica                                            ', N'zampiga                                           ', N'monica.zampiga@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'monica                                            ', N'zampiga                                           ', N'monica.zampiga@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'monika vasileva                                   ', N'rashkova                                          ', N'monikavasileva.rashkova.stud@ispascalcomandini.it                                                   ', N'1M-C', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'mor                                               ', N'ndiaye                                            ', N'mor.ndiaye.stud@ispascalcomandini.it                                                                ', N'2G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'morena                                            ', N'gallinucci                                        ', N'morena.gallinucci@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'morena                                            ', N'gallinucci                                        ', N'morena.gallinucci@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'barbieri                                          ', N'mose''                                             ', N'mose.barbieri.stud@ispascalcomandini.it                                                             ', N'3E-P', N'S')
 GO
@@ -2817,7 +2821,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'myriam vittoria                                   ', N'de mite                                           ', N'myriamvittoria.demite.stud@ispascalcomandini.it                                                     ', N'1M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'natale                                            ', N'tanese                                            ', N'natale.tanese@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'natale                                            ', N'tanese                                            ', N'natale.tanese@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'natanaele                                         ', N'stefanini                                         ', N'natanaele.stefanini.stud@ispascalcomandini.it                                                       ', N'2H-P', N'S')
 GO
@@ -2829,7 +2833,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nertil                                            ', N'mullalli                                          ', N'nertil.mullalli.stud@ispascalcomandini.it                                                           ', N'1B-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nevio                                             ', N'lombardi                                          ', N'nevio.lombardi@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nevio                                             ', N'lombardi                                          ', N'nevio.lombardi@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'niccolo''                                          ', N'falzaresi                                         ', N'niccolo.falzaresi.stud@ispascalcomandini.it                                                         ', N'2E-C', N'S')
 GO
@@ -2881,9 +2885,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nicole                                            ', N'severi                                            ', N'nicole.severi.stud@ispascalcomandini.it                                                             ', N'1E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nicoletta                                         ', N'abbondanza                                        ', N'nicoletta.abbondanza@ispascalcomandini.it                                                           ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nicoletta                                         ', N'abbondanza                                        ', N'nicoletta.abbondanza@ispascalcomandini.it                                                           ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nicoletta                                         ', N'belletti                                          ', N'nicoletta.belletti@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nicoletta                                         ', N'belletti                                          ', N'nicoletta.belletti@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'nicolo''                                           ', N'barbarulo                                         ', N'nicolo.barbarulo.stud@ispascalcomandini.it                                                          ', N'2B-P', N'S')
 GO
@@ -2969,9 +2973,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'othmane                                           ', N'hassar                                            ', N'othmane.hassar.stud@ispascalcomandini.it                                                            ', N'1F-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paola                                             ', N'gasperoni                                         ', N'paola.gasperoni@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paola                                             ', N'gasperoni                                         ', N'paola.gasperoni@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paola                                             ', N'masi                                              ', N'paola.masi@ispascalcomandini.it                                                                     ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paola                                             ', N'masi                                              ', N'paola.masi@ispascalcomandini.it                                                                     ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paolo                                             ', N'alessandrini                                      ', N'paolo.alessandrini@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
@@ -2983,7 +2987,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paolo                                             ', N'gabbanini                                         ', N'paolo.gabbanini.stud@ispascalcomandini.it                                                           ', N'3C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paolo                                             ', N'lumini                                            ', N'paolo.lumini@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paolo                                             ', N'lumini                                            ', N'paolo.lumini@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'paolo                                             ', N'magnani                                           ', N'paolo.magnani.stud@ispascalcomandini.it                                                             ', N'3I-P', N'S')
 GO
@@ -2999,13 +3003,13 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'parvaneh                                          ', N'farrokhi                                          ', N'parvaneh.farrokhi.stud@ispascalcomandini.it                                                         ', N'4M-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pasquale                                          ', N'olandese                                          ', N'pasquale.olandese@ispascalcomandini.it                                                              ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pasquale                                          ', N'olandese                                          ', N'pasquale.olandese@ispascalcomandini.it                                                              ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pasquale                                          ', N'sannino                                           ', N'pasquale.sannino.stud@ispascalcomandini.it                                                          ', N'3E-C', N'S')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pasquale alessio                                  ', N'minniti                                           ', N'pasqualealessio.minniti.stud@ispascalcomandini.it                                                   ', N'4I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pasqualino                                        ', N'solomita                                          ', N'pasqualino.solomita@ispascalcomandini.it                                                            ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pasqualino                                        ', N'solomita                                          ', N'pasqualino.solomita@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'battazza                                          ', N'patrick                                           ', N'patrick.battazza.stud@ispascalcomandini.it                                                          ', N'3E-P', N'S')
 GO
@@ -3019,9 +3023,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'peter                                             ', N'bertaccini                                        ', N'peter.bertaccini.stud@ispascalcomandini.it                                                          ', N'1C-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'piergiorgio                                       ', N'batani                                            ', N'piergiorgio.batani@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'piergiorgio                                       ', N'batani                                            ', N'piergiorgio.batani@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'piero                                             ', N'comelli                                           ', N'piero.comelli@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'piero                                             ', N'comelli                                           ', N'piero.comelli@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'pier sebastiano                                   ', N'peluso                                            ', N'piersebastiano.peluso.stud@ispascalcomandini.it                                                     ', N'3A-C', N'S')
 GO
@@ -3159,9 +3163,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'rosaria                                           ', N'amoroso                                           ', N'rosaria.amoroso@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'rosetta                                           ', N'baldacci                                          ', N'rosetta.baldacci@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'rosetta                                           ', N'baldacci                                          ', N'rosetta.baldacci@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'rossella                                          ', N'rivellini                                         ', N'rossella.rivellini@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'rossella                                          ', N'rivellini                                         ', N'rossella.rivellini@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'roxanaantonella                                   ', N'graur                                             ', N'roxanaantonella.graur.stud@ispascalcomandini.it                                                     ', N'1M-P', N'S')
 GO
@@ -3265,9 +3269,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'cappelli                                          ', N'sara                                              ', N'sara.cappelli.stud@ispascalcomandini.it                                                             ', N'3E-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sara                                              ', N'gradara                                           ', N'sara.gradara@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sara                                              ', N'gradara                                           ', N'sara.gradara@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sara                                              ', N'pistocchi                                         ', N'sara.pistocchi@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sara                                              ', N'pistocchi                                         ', N'sara.pistocchi@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sara                                              ', N'strada                                            ', N'sara.strada.stud@ispascalcomandini.it                                                               ', N'4M-C', N'S')
 GO
@@ -3289,11 +3293,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sem                                               ', N'werpers                                           ', N'sem.werpers.stud@ispascalcomandini.it                                                               ', N'3A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'serena                                            ', N'carrano                                           ', N'serena.carrano@ispascalcomandini.it                                                                 ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'serena                                            ', N'carrano                                           ', N'serena.carrano@ispascalcomandini.it                                                                 ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sergio                                            ', N'maltoni                                           ', N'sergio.maltoni.stud@ispascalcomandini.it                                                            ', N'2I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sergio                                            ', N'quarta                                            ', N'sergio.quarta@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sergio                                            ', N'quarta                                            ', N'sergio.quarta@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'sergio                                            ', N'stolear                                           ', N'sergio.stolear.stud@ispascalcomandini.it                                                            ', N'1I-P', N'S')
 GO
@@ -3307,7 +3311,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'astefanoaei                                       ', N'silvia                                            ', N'silvia.astefanoaei.stud@ispascalcomandini.it                                                        ', N'3I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'silvia                                            ', N'conti                                             ', N'silvia.conti@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'silvia                                            ', N'conti                                             ', N'silvia.conti@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'silvia                                            ', N'zavalloni                                         ', N'silvia.zavalloni@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
@@ -3321,7 +3325,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'brighi                                            ', N'simone.brighi.stud@ispascalcomandini.it                                                             ', N'3A-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'cannolicchio                                      ', N'simone.cannolicchio@ispascalcomandini.it                                                            ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'cannolicchio                                      ', N'simone.cannolicchio@ispascalcomandini.it                                                            ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'ceccarelli                                        ', N'simone.ceccarelli.stud@ispascalcomandini.it                                                         ', N'1F-P', N'S')
 GO
@@ -3355,7 +3359,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'migani                                            ', N'simone.migani.stud@ispascalcomandini.it                                                             ', N'3A-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'nucci                                             ', N'simone.nucci@ispascalcomandini.it                                                                   ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'nucci                                             ', N'simone.nucci@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'simone                                            ', N'piolanti                                          ', N'simone.piolanti.stud@ispascalcomandini.it                                                           ', N'4F-P', N'S')
 GO
@@ -3415,9 +3419,9 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stefan dragos                                     ', N'racovita                                          ', N'stefandragos.racovita.stud@ispascalcomandini.it                                                     ', N'4G-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stefania                                          ', N'carano                                            ', N'stefania.carano@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stefania                                          ', N'carano                                            ', N'stefania.carano@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stefano                                           ', N'castagnoli                                        ', N'stefano.castagnoli@ispascalcomandini.it                                                             ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stefano                                           ', N'castagnoli                                        ', N'stefano.castagnoli@ispascalcomandini.it                                                             ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'stefano                                           ', N'severi                                            ', N'stefano.severi.stud@ispascalcomandini.it                                                            ', N'4C-P', N'S')
 GO
@@ -3443,11 +3447,11 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'thomas                                            ', N'granieri                                          ', N'thomas.granieri.stud@ispascalcomandini.it                                                           ', N'2F-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'thomas                                            ', N'gualtieri                                         ', N'thomas.gualtieri@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'thomas                                            ', N'gualtieri                                         ', N'thomas.gualtieri@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'thomas                                            ', N'rossini                                           ', N'thomas.rossini.stud@ispascalcomandini.it                                                            ', N'4E-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'tiberio                                           ', N'tonetti                                           ', N'tiberio.tonetti@ispascalcomandini.it                                                                ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'tiberio                                           ', N'tonetti                                           ', N'tiberio.tonetti@ispascalcomandini.it                                                                ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'baldacci                                          ', N'tommaso                                           ', N'tommaso.baldacci.stud@ispascalcomandini.it                                                          ', N'2F-P', N'S')
 GO
@@ -3515,7 +3519,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'tommy                                             ', N'gambelli                                          ', N'tommy.gambelli.stud@ispascalcomandini.it                                                            ', N'3E-C', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'toni                                              ', N'greco                                             ', N'toni.greco@ispascalcomandini.it                                                                     ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'toni                                              ', N'greco                                             ', N'toni.greco@ispascalcomandini.it                                                                     ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'urbano                                            ', N'lupoli                                            ', N'urbano.lupoli.stud@ispascalcomandini.it                                                             ', N'3E-C', N'S')
 GO
@@ -3569,7 +3573,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vincenzo                                          ', N'maisano                                           ', N'vincenzo.maisano@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vincenzo                                          ', N'mazzara                                           ', N'vincenzo.mazzara@ispascalcomandini.it                                                               ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vincenzo                                          ', N'mazzara                                           ', N'vincenzo.mazzara@ispascalcomandini.it                                                               ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vincenzo                                          ', N'prisco                                            ', N'vincenzo.prisco.stud@ispascalcomandini.it                                                           ', N'5L-P', N'S')
 GO
@@ -3583,7 +3587,7 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vitaliano                                         ', N'tescione                                          ', N'vitaliano.tescione.stud@ispascalcomandini.it                                                        ', N'1I-P', N'S')
 GO
-INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vito                                              ', N'monfreda                                          ', N'vito.monfreda@ispascalcomandini.it                                                                  ', NULL, N'D')
+INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vito                                              ', N'monfreda                                          ', N'vito.monfreda@ispascalcomandini.it                                                                  ', NULL, N'A')
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'vittorio                                          ', N'sorrentino                                        ', N'vittorio.sorrentino.stud@ispascalcomandini.it                                                       ', N'2G-C', N'S')
 GO
@@ -3639,15 +3643,15 @@ INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tip
 GO
 INSERT [dbo].[ListaUtentiScolastici] ([Nome], [Cognome], [Email], [Classe], [Tipo]) VALUES (N'zorio                                             ', N'guerra                                            ', N'zorio.guerra@ispascalcomandini.it                                                                   ', NULL, N'A')
 GO
-INSERT [dbo].[Prodotto] ([Codce], [Nome], [Descrizione], [Note], [Prezzo], [TipologiaProdotto]) VALUES (1, N'La Mortadellazza                        ', N'Due semplici fette di pane riempite con delle fantastiche fette di Mortadella                                                                                                                                                                             ', NULL, 3.8, 1)
+INSERT [dbo].[Prodotto] ([Codice], [Nome], [Descrizione], [Note], [Prezzo], [TipologiaProdotto]) VALUES (1, N'La Mortadellazza                        ', N'Due semplici fette di pane riempite con delle fantastiche fette di Mortadella                                                                                                                                                                             ', NULL, 3.8, 1)
 GO
-INSERT [dbo].[Prodotto] ([Codce], [Nome], [Descrizione], [Note], [Prezzo], [TipologiaProdotto]) VALUES (2, N'Panino con il Prosciutto Crudo          ', NULL, NULL, 4.2, 1)
+INSERT [dbo].[Prodotto] ([Codice], [Nome], [Descrizione], [Note], [Prezzo], [TipologiaProdotto]) VALUES (2, N'Panino con il Prosciutto Crudo          ', NULL, NULL, 4.2, 1)
 GO
 SET IDENTITY_INSERT [dbo].[Sede] ON 
 GO
-INSERT [dbo].[Sede] ([Codice], [Tipo], [Descrizione], [Indirizzo], [Nome], [Telefono]) VALUES (1, NULL, NULL, N'''X''                           ', N'''FE''                ', 76643765)
+INSERT [dbo].[Sede] ([Codice], [Tipo], [Descrizione], [Indirizzo], [Nome], [Telefono]) VALUES (1, NULL, NULL, N'''X''                           ', N'Pascal              ', 76643765)
 GO
-INSERT [dbo].[Sede] ([Codice], [Tipo], [Descrizione], [Indirizzo], [Nome], [Telefono]) VALUES (2, NULL, NULL, N'''casadife''                    ', N'''FA''                ', 5426389)
+INSERT [dbo].[Sede] ([Codice], [Tipo], [Descrizione], [Indirizzo], [Nome], [Telefono]) VALUES (2, NULL, NULL, N'''casadife''                    ', N'Comandini           ', 5426389)
 GO
 SET IDENTITY_INSERT [dbo].[Sede] OFF
 GO
@@ -3678,7 +3682,7 @@ GO
 ALTER TABLE [dbo].[CompostoDa] CHECK CONSTRAINT [FK_CompostoDa_Menu]
 GO
 ALTER TABLE [dbo].[CompostoDa]  WITH CHECK ADD  CONSTRAINT [FK_CompostoDa_Prodotto] FOREIGN KEY([Prodotto])
-REFERENCES [dbo].[Prodotto] ([Codce])
+REFERENCES [dbo].[Prodotto] ([Codice])
 GO
 ALTER TABLE [dbo].[CompostoDa] CHECK CONSTRAINT [FK_CompostoDa_Prodotto]
 GO

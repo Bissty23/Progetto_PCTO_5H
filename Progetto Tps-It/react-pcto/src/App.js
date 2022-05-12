@@ -7,7 +7,7 @@ import Logo from './img/icona.png'
 import './App.css'
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Accedi from './Pagine/Accedi/Accedi'
-import Account from './Pagine/Account/Accout'
+import Account from './Pagine/Account/Account'
 import Prodotti from './Pagine/PaginaProdotti/Prodotti'
 import PaginaProdotti from './Pagine/PaginaProdotto/PaginaProdotto'
  
