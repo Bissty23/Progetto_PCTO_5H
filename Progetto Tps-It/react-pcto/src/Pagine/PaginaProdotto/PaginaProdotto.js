@@ -67,7 +67,18 @@ class X extends React.Component {
         }
 
         if(Account.Accesso){
-            this.Alert(true, "ciao", 'Account')
+            var payload = {
+                Username:localStorage.getItem('username'),
+                Prodotto: this.props.prodotto.Nome.trim(),
+                Sede: localStorage.getItem('Sede')
+              }
+              Axios.post("http://" + window.location.hostname + ":8090/api/Prenota", payload)
+                .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                }
+              )
+            this.Alert(true, "prenotazione eseguita per controllare", 'Account')
         }
         else this.Alert(false, "Devi fare l'accesso prima di poter fare un ordine", 'Accedi')
     }

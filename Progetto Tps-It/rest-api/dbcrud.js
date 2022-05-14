@@ -96,25 +96,25 @@ async function Prenotazione(Account, Prodotto, Sede, callback = () => {}){
    let oraRitiro = null
    let codIntervallo = 0
 
-  // let oraCorrente = new Date().getHours()
-  // let minutoCorrente = new Date().getMinutes()
-  // let secondoCorrente = new Date().getSeconds()
+  let oraCorrente = new Date().getHours()
+  let minutoCorrente = new Date().getMinutes()
+  let secondoCorrente = new Date().getSeconds()
 
-  // if(account[0][0].Ruolo.trim() === "S") {
+  if(account[0][0].Ruolo.trim() === "S") {
 
-  //   let intervalli = await GetIntervalliOrari()
+    let intervalli = await GetIntervalliOrari()
 
-  //   intervalli[0].forEach(x => {
+    intervalli[0].forEach(x => {
 
-  //     if(oraRitiro === null){
-  //         if(x.OraFinale > moment(f).add(10, 'm').toDate())
-  //           oraRitiro = moment(f).add(10, 'm').toDate()
-  //       codIntervallo = x.Codice
-  //     }
-  //   })
-  // }
-  // else
-  //   oraRitiro = moment(f).add(10, 'm').toDate()
+      if(oraRitiro === null){
+          if(x.OraFinale > moment(f).add(10, 'm').toDate())
+            oraRitiro = moment(f).add(10, 'm').toDate()
+        codIntervallo = x.Codice
+      }
+    })
+  }
+  else
+    oraRitiro = moment(f).add(10, 'm').toDate()
 
 
    oraRitiro = new Date(x.getFullYear(),x.getMonth(),x.getDate(),x.getHours(),x.getMinutes(),x.getSeconds())
@@ -195,4 +195,5 @@ module.exports = {
   GetEmail: GetEmail,
   Registrazione: Registrazione,
   Prenotazione: Prenotazione,
+  GetPrenotazioni: GetPrenotazioni
 }

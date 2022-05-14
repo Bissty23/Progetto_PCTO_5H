@@ -189,6 +189,8 @@ class Registra extends React.Component{
                 $('#sedi').append("<option>"+"--Sede--"+"</option>")
                 $('#classi').append("<option>"+"--Classe--"+"</option>")
 
+                window.location.href = "/"
+
                 this.sedi = false
                 this.classi = false
               },

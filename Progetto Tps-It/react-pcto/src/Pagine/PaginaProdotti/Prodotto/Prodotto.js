@@ -25,20 +25,6 @@ class Prodotto extends React.Component {
             </div>
         )    
     }    
-
-    Prenota = () => {
-        var payload = {
-            Username:localStorage.getItem('username'),
-            Prodotto: this.props.prodotto.Nome.trim(),
-            Sede: localStorage.getItem('Sede')
-          }
-          Axios.post("http://" + window.location.hostname + ":8090/api/Prenota", payload)
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
-            }
-          )
-    }
 }
 
 export default Prodotto;
